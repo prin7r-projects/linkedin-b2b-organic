@@ -43,9 +43,9 @@ Single source of truth: `apps/landing/tailwind.config.ts` and `apps/landing/app/
 
 | Role | Token | Hex | CSS var | Used for |
 |------|-------|-----|---------|----------|
-| Surface (page) | `bone` | `#F5F1E8` | `--bone` | Page background, default card surfaces |
-| Surface (band) | `bone-2` | `#EBE3D2` | `--bone-2` | Section bands, footer surface, faint separation |
-| Surface (manuscript) | `manuscript` | `#FBF7EE` | `--manuscript` | Hero ghostwritten-post frame, agency-tier card surface |
+| Surface (page) | `bone` | `#FFFFFF` | `--bone` | Page background, default card surfaces |
+| Surface (band) | `bone-2` | `#F4F2EE` | `--bone-2` | Section bands, footer surface, faint separation |
+| Surface (manuscript) | `manuscript` | `#FAFAF8` | `--manuscript` | Hero ghostwritten-post frame, agency-tier card surface |
 | Ink | `ink` | `#0B1A2A` | `--ink` | All body copy, primary buttons, masthead rule |
 | Ink (raised) | `ink-2` | `#142435` | `--ink-2` | Anti-manifesto card surface (inverted), avatar block |
 | Ink (subdued) | `graphite` | `#1F2A38` | `--graphite` | Body 14-15px copy, ledger paragraph |

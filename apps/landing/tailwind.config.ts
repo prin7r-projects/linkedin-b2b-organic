@@ -15,8 +15,8 @@ const config: Config = {
     },
     extend: {
       colors: {
-        bone: "#F5F1E8",
-        "bone-2": "#EBE3D2",
+        bone: "#FFFFFF",
+        "bone-2": "#F4F2EE",
         ink: "#0B1A2A",
         "ink-2": "#142435",
         graphite: "#1F2A38",
@@ -24,7 +24,7 @@ const config: Config = {
         olive: "#5B6B2F",
         "olive-2": "#7A8C44",
         rust: "#9C3E1F",
-        manuscript: "#FBF7EE"
+        manuscript: "#FAFAF8"
       },
       fontFamily: {
         display: ["EB Garamond", "Georgia", "serif"],
