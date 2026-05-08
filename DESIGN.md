@@ -20,12 +20,14 @@ The landing is written for these two. Voice mirrors a literary agency's day-book
 
 ## 2. Visual positioning
 
-A literary agency dressed for the open page.
+> A literary agency installed on a gallery wall. Pure white room. Enormous display type carries the room. The post-itself is the museum-piece — framed in serif, mounted in the centre of the canvas. Color enters only through the writing.
 
-- **Anchor reference points** — the masthead rule of a regional broadsheet, a literary-quarterly cover, a writer's signed manuscript laid on a desk, the *Lex* column's typographic discipline, the *Stratechery* email letterhead.
+After the **2026-05-08 Apple-gallery refresh** (see §15), the visual posture is `apple` reference: enormous SF-Pro-class display headlines (96-128px hero) on a pure-white canvas, with the ghostwritten post acting as the colored "product" the gallery is built around. The literary identity is preserved by EB Garamond inside the post — the rest of the page (nav, sections, headers) is now Inter at Apple's display tracking (`-0.022em` at 96px+).
+
+- **Anchor reference points** — Apple's MacBook product pages (gallery wall, enormous type, product is the only color); the masthead rule of a regional broadsheet; a writer's signed manuscript mounted under museum glass; the *Lex* column's typographic discipline.
 - **Avoided reference points** — LinkedIn-blue hero, Vercel/Linear flat-mono dashboard, AI-mint pastels, "personal brand" SaaS purple gradients, founder-bro guru fonts (Bebas, Anton), the "screenshot of a viral post with 100k likes" hero, hyperbolic capitalised titles, emojis in product copy.
-- **Felt sense** — bone paper laid on a navy desk, deep ink, a single olive editor's mark, rust used the way a copy-editor crosses out a line. No drop shadows beyond a single 1px hairline shadow on the masthead and the manuscript frame; no gradients beyond a 3.5% paper grain.
-- **Anti-features** — gradients, neon, glassmorphism, drop shadows beyond `0 1px 0 0 rgba(11,26,42,.08)`, three-platform-logo-collage hero, chat-bubble illustrations, emoji in product copy, unironic use of the word "thought leadership".
+- **Felt sense** — pure-white gallery room, near-black ink, the post-itself in editorial serif as the only "colored" element. No drop shadows; elevation is colour-only (canvas vs fog vs snow). Generous whitespace as the primary design element.
+- **Anti-features** — gradients, neon, glassmorphism, drop shadows beyond a 1px hairline on the masthead, three-platform-logo-collage hero, chat-bubble illustrations, emoji in product copy, unironic use of the word "thought leadership".
 
 ## 3. ShadCN baseline and local component policy
 
@@ -39,38 +41,42 @@ A literary agency dressed for the open page.
 
 ## 4. Color tokens
 
-Single source of truth: `apps/landing/tailwind.config.ts` and `apps/landing/app/globals.css`. Five-color editorial palette; intentionally not LinkedIn-blue and intentionally not the "personal brand" purple-on-cream default.
+Single source of truth: `apps/landing/tailwind.config.ts` and `apps/landing/app/globals.css`. Apple-gallery scale (canvas → fog → snow → silver-mist) with the editorial olive/rust held back as in-content accents on the manuscript only.
 
 | Role | Token | Hex | CSS var | Used for |
 |------|-------|-----|---------|----------|
-| Surface (page) | `bone` | `#FFFFFF` | `--bone` | Page background, default card surfaces |
-| Surface (band) | `bone-2` | `#F4F2EE` | `--bone-2` | Section bands, footer surface, faint separation |
-| Surface (manuscript) | `manuscript` | `#FAFAF8` | `--manuscript` | Hero ghostwritten-post frame, agency-tier card surface |
-| Ink | `ink` | `#0B1A2A` | `--ink` | All body copy, primary buttons, masthead rule |
-| Ink (raised) | `ink-2` | `#142435` | `--ink-2` | Anti-manifesto card surface (inverted), avatar block |
-| Ink (subdued) | `graphite` | `#1F2A38` | `--graphite` | Body 14-15px copy, ledger paragraph |
-| Muted | `smoke` | `#6E7989` | `--smoke` | Marginalia caps, mono labels, captions |
-| Accent (editor) | `olive` | `#5B6B2F` | `--olive` | Editor's marks, eyebrow rules, hover states, signature underbar |
-| Accent (raised) | `olive-2` | `#7A8C44` | `--olive-2` | Anti-manifesto eyebrow rule on dark surface |
-| Accent (correction) | `rust` | `#9C3E1F` | `--rust` | Pull-quote rule, anti-feature strikethrough, error caption text |
+| Canvas | `canvas` | `#FFFFFF` | `--canvas` | Page background, hero band, default surface |
+| Surface (band) | `fog` | `#F5F5F7` | `--fog` | Service / FAQ section bands; week-card recessed surface |
+| Surface (snow) | `snow` | `#FFFFFF` | `--snow` | Tier card surface, anti-feature card surface, raised wells |
+| Surface (manuscript) | `manuscript` | `#FAFAF8` | `--manuscript` | Hero ghostwritten-post frame (the museum-piece), featured tier card |
+| Border / hairline | `silver-mist` | `#E8E8ED` | `--silver-mist` | Section bottoms, card outlines, button-ghost borders, FAQ rules |
+| Ink | `ink` | `#1D1D1F` | `--ink` | All headline + body text, primary nav labels, masthead rule |
+| Slate | `slate` | `#474747` | `--slate` | 17px body copy, ledger paragraph, FAQ answers |
+| Graphite | `graphite` | `#707070` | `--graphite` | Marginalia text, day labels, day-card body, lede/secondary copy |
+| Ash | `ash` | `#8F8F8F` | `--ash` | Disabled state, fine-grain icon strokes |
+| Obsidian | `obsidian` | `#000000` | `--obsidian` | Dark "anti-manifesto" stage, primary CTA fill, max-contrast wells |
+| Azure (CTA) | `azure` | `#0071E3` | `--azure` | Reserved for future Apple-style primary CTA fill (selection highlight, focus ring) |
+| Cobalt link | `cobalt-link` | `#0066CC` | `--cobalt-link` | Inline text links only (not button fills) |
+| Olive (accent) | `olive` | `#5B6B2F` | `--olive` | Held back; available as an in-manuscript editorial mark only |
+| Rust (correction) | `rust` | `#9C3E1F` | `--rust` | Anti-feature strikethrough, pull-quote rule on dark stage |
 
-**Contrast.** All foreground/background combinations meet WCAG AA: ink-on-bone 13.3:1; graphite-on-bone 11.6:1; smoke-on-bone 4.6:1 (use only at 14px+); olive-on-bone 4.5:1; manuscript-on-ink 13.3:1; olive-2-on-ink 5.6:1; rust-on-bone 4.6:1.
+**Contrast.** All foreground/background combinations meet WCAG AA: ink-on-canvas 16.5:1; slate-on-canvas 9.7:1; graphite-on-canvas 5.7:1; ash-on-canvas 3.9:1 (use only at 14px+ semibold); azure-on-canvas 4.6:1.
 
-**Forbidden combinations.** Olive text on rust; smoke on bone-2 below 14px; olive-2 text on bone below 16px; any color on a gradient.
+**Forbidden combinations.** Olive text on rust; ash on fog below 14px; cobalt-link as a button fill (it is link-only); any color on a gradient (the page is gradient-free).
 
 ## 5. Typography
 
-Three families. No fourth font. Pairing is deliberately *not* the all-sans tech aesthetic — Bylineship reads as a literary agency, not as a SaaS, and not as a LinkedIn-creator's bio.
+Three families. After the 2026-05-08 Apple-gallery refresh, **Inter** carries the entire UI surface (display + body + nav) at Apple's SF-Pro tracking; **EB Garamond** is held back for the post-itself and pull-quotes (the museum-piece copy); **IBM Plex Mono** for marginalia.
 
 | Role | Family | Weights | Used at | Reason |
 |------|--------|---------|---------|--------|
-| Display | **EB Garamond** | 400 / 500 / 600 / 700 / 800 (+ italic 400, italic 500) | Hero 56-112px, sections 40-56px, long-form 22-26px, sample-post body | Optical-sized old-style serif tuned for both display and body; reads as a manuscript page, not a startup. The italic 400 carries the editorial voice. |
-| Body | **Inter** | 400 / 500 / 600 | Body 15-17px, UI 14px, sample-post profile metadata, button labels | Neutral, high-legibility sans; pairs cleanly with Garamond and stands in for a LinkedIn post's native feed font without being LinkedIn-blue. |
-| Mono | **IBM Plex Mono** | 400 / 500 | Marginalia caps `est. 2026`, byline dotline, day numerals on the week-cards (when not in display), error captions | A literary mono with slight serifs at the terminals; reads as machine output and as old hot-metal type at the same time. |
+| Display + UI | **Inter** | 300 / 400 / 500 / 600 / 700 | Hero 96-128px, sections 64-80px, body 17px, nav 14px, button labels | SF-Pro Display substitute called out in `apple.md`. Tightens to `-0.022em` at 96px+ — the chiseled-mass effect Apple uses for marketing headlines. Weight 700 for hero, 600 for section headers, 400/500 for body and labels, 300 for the lede paragraphs (Apple's "lighter than headline" rule). |
+| Editorial accent | **EB Garamond** | 400 / 500 / 600 / 700 (+ italic 400, italic 500) | Sample-post body 18-19px, pull-quotes 22-26px, ledger bullet em-dashes | Held back for the in-content "writing" only — the museum-piece treatment. The post and the pull-quote are the only places Garamond appears now; it carries the literary-agency identity from inside the gallery frame, not as the chrome of the page. |
+| Mono | **IBM Plex Mono** | 400 / 500 | Marginalia caps `est. 2026`, byline dotline, mono labels, captions | Editorial machine-output voice; opens to `0.18em` for caps. |
 
-Loaded from Google Fonts in `globals.css` with `display=swap`. The pairing rationale is documented in [`docs/01-brand-identity.md`](docs/01-brand-identity.md) — old-style serif display + neutral sans body + literary mono is the editorial pairing for a writers' room brand.
+Loaded from Google Fonts in `globals.css` with `display=swap`.
 
-**Type scale (display).** 18 / 22 / 28 / 34 / 40 / 44 / 56 / 64 / 88 / 112 / 116 px. **Body scale.** 11 / 12 / 13 / 14 / 14.5 / 15 / 15.5 / 17 / 19 / 22 / 24 px. **Letter-spacing.** Display tightens by `-0.014em`; mono labels open to `0.18em` for caps.
+**Type scale (display, Apple-aligned).** 12 / 14 / 17 / 20 / 24 / 28 / 40 / 56 / 80 / 96 / 128 px. **Body scale.** 13 / 14 / 14.5 / 15 / 17 / 18 / 19 / 22 px. **Letter-spacing.** Display Inter at `-0.022em` for 96px+, `-0.016em` at 56px, `-0.010em` at 20px; mono labels open to `0.18em` for caps.
 
 ## 6. Spacing, radius, shadows, and borders
 
@@ -188,3 +194,4 @@ Captured via Playwright headless Chromium on the deployed URL (not localhost). R
 | 2026-05-08 | Initial Wave 2 build. Hero (with manuscript-framed sample ghostwritten post), service ledger, week strip, anti-feature manifesto on inverted ink surface, three-tier pricing with NOWPayments CTAs, seven-question FAQ, footer. NOWPayments hosted-invoice route + HMAC-SHA512 IPN webhook wired. Vendored ShadCN `Button` + `Card`. | `apps/landing/` |
 | 2026-05-08 | DESIGN.md authored at root. 10 strategy docs published under `docs/`. Pitch deck HTML + Markdown shipped. Desktop + mobile screenshots captured against production. | repo root + `docs/` |
 | 2026-05-08 | Rebrand: **Underline → Bylineship**. Wave 2 name research flagged Underline FAIL (underline.com is an active fiber-network company; "underline" carries heavy unrelated meanings). Bylineship aligns with the existing literary-agency / ghostwriter positioning. Logo monogram swapped from `U` to `B`; wordmark, og:title, metadata, debug tags, and copy updated repo-wide. Visual essence (editorial-ghostwriter, serif-magazine palette, manuscript frame) unchanged. | repo-wide |
+| 2026-05-08 | **Design refresh — `apple` reference (Gallery wall)**. Lifted Apple's MacBook product-page direction: pure-white canvas (`#FFFFFF`), Inter as SF-Pro substitute carrying the entire UI at Apple's display tracking (`-0.022em` at 96px+), hero headline pushed to **96-128px** centered above a museum-piece manuscript card. EB Garamond preserved inside the post and on pull-quotes — it now reads as the "color" of the gallery, not the chrome. Olive eyebrow rules and grain texture removed; section bands switched to canvas/fog alternation. Buttons swapped from square to **999px pills**, fill from olive-on-hover to opacity-only Apple feedback. Tier cards radius `0 → 28px`. Anti-manifesto stage swapped to `obsidian #000000` per Apple Dark Stage surface. Reference: `/Users/keer/projects/prin7r/design-references/apple.md`. | `apps/landing/`, DESIGN.md §1, §4-5, §15, button primitive |

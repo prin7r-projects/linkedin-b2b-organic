@@ -55,8 +55,8 @@ export function PricingCta({ plan, label, variant = "default", fullWidth = false
 
   const baseClass =
     variant === "ghost"
-      ? "inline-flex items-center justify-center gap-2 h-12 px-5 text-[15px] font-medium border border-ink text-ink bg-transparent hover:bg-ink hover:text-manuscript transition-colors duration-75 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-olive rounded-none disabled:opacity-50 disabled:cursor-not-allowed"
-      : "inline-flex items-center justify-center gap-2 h-12 px-5 text-[15px] font-medium border border-ink bg-ink text-manuscript hover:bg-olive hover:border-olive transition-colors duration-75 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-olive rounded-none disabled:opacity-50 disabled:cursor-not-allowed";
+      ? "inline-flex items-center justify-center gap-2 h-12 px-6 text-[16px] font-medium border border-silver-mist text-ink bg-transparent hover:bg-fog hover:border-graphite transition-opacity duration-75 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-azure rounded-full disabled:opacity-50 disabled:cursor-not-allowed"
+      : "inline-flex items-center justify-center gap-2 h-12 px-6 text-[16px] font-medium border border-obsidian bg-obsidian text-snow hover:opacity-88 transition-opacity duration-75 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-azure rounded-full disabled:opacity-50 disabled:cursor-not-allowed";
 
   return (
     <div className={fullWidth ? "w-full" : undefined}>

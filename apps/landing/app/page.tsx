@@ -38,19 +38,19 @@ function Masthead() {
   return (
     <header
       id="masthead"
-      className="border-b border-ink/10 bg-bone sticky top-0 z-30 shadow-masthead"
+      className="border-b border-silver-mist bg-canvas sticky top-0 z-30 shadow-masthead backdrop-blur-sm"
     >
       <div className="mx-auto max-w-prose px-6 md:px-10 py-4 flex items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center gap-7" aria-label="primary">
-          <a href="#service" className="marginalia hover:text-ink transition-colors">The work</a>
-          <a href="#process" className="marginalia hover:text-ink transition-colors">The week</a>
-          <a href="#pricing" className="marginalia hover:text-ink transition-colors">Retainer</a>
-          <a href="#faq" className="marginalia hover:text-ink transition-colors">FAQ</a>
-          <ButtonAnchor href="#pricing" className="ml-2">Take a retainer →</ButtonAnchor>
+        <nav className="hidden md:flex items-center gap-8" aria-label="primary">
+          <a href="#service" className="text-[14px] text-ink hover:text-graphite transition-colors">The work</a>
+          <a href="#process" className="text-[14px] text-ink hover:text-graphite transition-colors">The week</a>
+          <a href="#pricing" className="text-[14px] text-ink hover:text-graphite transition-colors">Retainer</a>
+          <a href="#faq" className="text-[14px] text-ink hover:text-graphite transition-colors">FAQ</a>
+          <ButtonAnchor href="#pricing" className="ml-2">Take a retainer</ButtonAnchor>
         </nav>
         <div className="md:hidden">
-          <ButtonAnchor href="#pricing" size="sm">Retainer →</ButtonAnchor>
+          <ButtonAnchor href="#pricing" size="sm">Retainer</ButtonAnchor>
         </div>
       </div>
     </header>
@@ -61,24 +61,23 @@ function Logo() {
   return (
     <a href="#hero" className="flex items-center gap-3" aria-label="Bylineship — home">
       <span aria-hidden="true" className="inline-block">
-        <svg width="34" height="34" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0" y="0" width="64" height="64" rx="2" fill="#0B1A2A" />
+        <svg width="32" height="32" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0" y="0" width="64" height="64" rx="14" fill="#1D1D1F" />
           <text
             x="32"
-            y="40"
+            y="42"
             textAnchor="middle"
             fontFamily="EB Garamond, Georgia, serif"
-            fontWeight="800"
+            fontWeight="700"
             fontSize="36"
-            fill="#FBF7EE"
+            fill="#FAFAF8"
           >
             B
           </text>
-          <rect x="14" y="49" width="36" height="2" fill="#5B6B2F" />
         </svg>
       </span>
-      <span className="font-display text-[20px] font-semibold tracking-tightest text-ink">
-        Bylineship<span className="text-olive">.</span>
+      <span className="text-[20px] font-semibold tracking-tighter text-ink">
+        Bylineship
       </span>
     </a>
   );
@@ -90,48 +89,43 @@ function Logo() {
 
 function Hero() {
   return (
-    <section id="hero" className="grain section">
-      <div className="mx-auto max-w-prose px-6 md:px-10 pt-16 md:pt-24 pb-20 md:pb-24">
-        <div className="grid md:grid-cols-12 gap-12 md:gap-16 items-start">
-          {/* Left: editorial intro */}
-          <div className="md:col-span-5">
-            <p className="marginalia">A literary agency for B2B LinkedIn · est. 2026</p>
-            <span className="eyebrow-rule" aria-hidden="true" />
-            <h1 className="font-display font-semibold text-[56px] md:text-[88px] lg:text-[112px] leading-[0.95] tracking-tightest text-ink">
-              You should
-              <br />
-              <span className="italic font-normal text-graphite">be</span> writing.
-              <br />
-              We&rsquo;ll do it.
-            </h1>
-            <p className="mt-8 max-w-md font-display text-[22px] md:text-[24px] text-graphite leading-snug">
-              Three ghostwritten posts a week, in your voice. An editorial comment plan on
-              fifty target accounts. A DM book that lands meetings. No engagement pods,
-              no bots, no clickbait hooks.
-            </p>
-            <div className="mt-9 flex flex-wrap gap-3 items-center">
-              <ButtonAnchor href="#pricing" size="lg" aria-label="See retainer tiers and pricing">
-                Take a retainer →
-              </ButtonAnchor>
-              <ButtonAnchor
-                href="mailto:writers@linkedin-b2b-organic.prin7r.com?subject=Voice%20intake%20call"
-                size="lg"
-                variant="ghost"
-                aria-label="Book a 30-minute voice intake call"
-              >
-                Book a voice call
-              </ButtonAnchor>
-            </div>
-            <p className="mt-7 marginalia max-w-xs">
-              Six client retainers per cohort. We close intake the first Monday of every month.
-            </p>
-          </div>
-
-          {/* Right: a sample post in the manuscript frame */}
-          <div className="md:col-span-7">
-            <SamplePost />
-          </div>
+    <section id="hero" className="bg-canvas">
+      {/* Apple-style centered display headline above the museum-piece "post". */}
+      <div className="mx-auto max-w-prose px-6 md:px-10 pt-20 md:pt-32 pb-12 md:pb-20 text-center">
+        <p className="marginalia">A literary agency for B2B LinkedIn · est. 2026</p>
+        <h1 className="mt-6 mx-auto max-w-[16ch] font-sans font-bold text-[56px] sm:text-[80px] md:text-[104px] lg:text-[128px] leading-[0.96] tracking-[-0.022em] text-ink">
+          You should be writing.
+        </h1>
+        <p className="mt-8 mx-auto max-w-[44ch] text-[20px] md:text-[22px] font-light text-slate leading-[1.4] tracking-[-0.010em]">
+          We&rsquo;ll do it. Three ghostwritten posts a week in your voice, an editorial comment
+          plan on fifty target accounts, a DM book that lands meetings.
+        </p>
+        <div className="mt-10 flex flex-wrap gap-3 items-center justify-center">
+          <ButtonAnchor href="#pricing" size="lg" aria-label="See retainer tiers and pricing">
+            Take a retainer
+          </ButtonAnchor>
+          <ButtonAnchor
+            href="mailto:writers@linkedin-b2b-organic.prin7r.com?subject=Voice%20intake%20call"
+            size="lg"
+            variant="ghost"
+            aria-label="Book a 30-minute voice intake call"
+          >
+            Book a voice call
+          </ButtonAnchor>
         </div>
+        <p className="mt-8 marginalia">
+          Six client retainers per cohort · intake closes the first Monday of every month
+        </p>
+      </div>
+
+      {/* The post-itself — the museum-piece, now full-width below the hero. */}
+      <div className="mx-auto max-w-prose px-6 md:px-10 pb-24 md:pb-32">
+        <div className="mx-auto max-w-3xl">
+          <SamplePost />
+        </div>
+        <p className="mt-6 marginalia text-center max-w-xl mx-auto">
+          A real ghostwritten post — the kind we ship every Tuesday at 7am
+        </p>
       </div>
     </section>
   );
@@ -140,13 +134,13 @@ function Hero() {
 function SamplePost() {
   return (
     <figure
-      className="manuscript p-7 md:p-10 max-w-column md:ml-auto"
+      className="manuscript p-8 md:p-12"
       aria-label="A sample ghostwritten LinkedIn post drafted by Bylineship for an operations VP at a B2B SaaS company"
     >
-      <header className="flex items-start gap-3 pb-4 border-b border-ink/10">
+      <header className="flex items-start gap-4 pb-5 border-b border-silver-mist">
         <div
           aria-hidden="true"
-          className="h-12 w-12 shrink-0 bg-ink-2 text-manuscript font-display font-semibold text-[20px] flex items-center justify-center"
+          className="h-12 w-12 shrink-0 bg-ink text-manuscript font-serif font-semibold text-[20px] flex items-center justify-center rounded-full"
         >
           MR
         </div>
@@ -159,7 +153,7 @@ function SamplePost() {
         </div>
       </header>
 
-      <div className="pt-5 pb-4 font-sans text-[15.5px] leading-[1.65] text-graphite space-y-4">
+      <div className="pt-6 pb-5 font-serif text-[18px] md:text-[19px] leading-[1.6] text-slate space-y-4">
         <p>
           Last week our CFO asked me how we&rsquo;d cut renewal-cycle time without hiring.
           I gave her the wrong answer.
@@ -182,16 +176,16 @@ function SamplePost() {
           Three weeks in, our cycle is down 19 days. The renewals platform is back in the
           drawer. The CFO is happy. I am, finally, a little embarrassed.
         </p>
-        <p className="text-ink">
+        <p className="text-ink font-medium">
           The dashboard you stare at is not the system you run.
           <span className="cursor-bar" aria-hidden="true" />
         </p>
       </div>
 
-      <footer className="pt-4 border-t border-ink/10 flex items-center justify-between gap-4 flex-wrap">
+      <footer className="pt-5 border-t border-silver-mist flex items-center justify-between gap-4 flex-wrap">
         <p className="byline">
           <span className="dot" aria-hidden="true" />
-          <span>Ghostwritten by Bylineship · signed off by Maya · Tuesday 6:48 am</span>
+          <span>Ghostwritten by Bylineship · signed off Maya · Tuesday 6:48 am</span>
         </p>
         <p className="marginalia">drafted in 38 min · two revisions</p>
       </footer>
@@ -245,14 +239,14 @@ function Service() {
   ];
 
   return (
-    <section id="service" className="section bg-bone-2/40">
-      <div className="mx-auto max-w-prose px-6 md:px-10 py-20 md:py-24">
+    <section id="service" className="section bg-fog">
+      <div className="mx-auto max-w-prose px-6 md:px-10 py-24 md:py-32">
         <SectionHeader
           eyebrow="What the retainer gets you"
-          title="A writers' room with you in the chair."
+          title="A writers&rsquo; room with you in the chair."
           lede="Bylineship is a service business dressed as a literary agency. The product is a working studio — the cadence, the artifacts, the editor on the other end. The LLM is a tool we hold."
         />
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 max-w-4xl">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-2 max-w-4xl">
           {items.map((item) => (
             <article key={item.num} className="ledger" aria-label={`Service item ${item.num}`}>
               <div className="num">{item.num}</div>
@@ -308,31 +302,31 @@ function Process() {
   ];
 
   return (
-    <section id="process" className="section">
-      <div className="mx-auto max-w-prose px-6 md:px-10 py-20 md:py-24">
+    <section id="process" className="section bg-canvas">
+      <div className="mx-auto max-w-prose px-6 md:px-10 py-24 md:py-32">
         <SectionHeader
           eyebrow="The week"
           title="A typical Monday-to-Friday."
-          lede="The retainer is a calendar, not a tool. We work the same way every week. You stay in your business; we stay in our writers' room."
+          lede="The retainer is a calendar, not a tool. We work the same way every week. You stay in your business; we stay in our writers&rsquo; room."
         />
         <ol
-          className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-ink/12 border border-ink/12"
+          className="mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4"
           aria-label="A typical week of the Bylineship retainer"
         >
           {days.map((day, i) => (
-            <li key={day.day} className="bg-bone p-6 flex flex-col gap-3 min-h-[260px]">
+            <li key={day.day} className="bg-fog rounded-2xl p-7 flex flex-col gap-3 min-h-[260px]">
               <div className="flex items-baseline gap-3">
-                <span className="font-display font-bold text-[58px] leading-none tracking-tightest text-olive">
+                <span className="font-sans font-bold text-[64px] leading-none tracking-[-0.022em] text-ink">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <span className="font-mono text-[11px] tracking-marginalia uppercase text-smoke">
+                <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-graphite">
                   {day.day}
                 </span>
               </div>
-              <h3 className="font-display font-semibold text-[22px] tracking-tightest text-ink leading-tight">
+              <h3 className="font-sans font-semibold text-[22px] tracking-[-0.016em] text-ink leading-tight">
                 {day.label}
               </h3>
-              <p className="text-[14.5px] text-graphite leading-snug">{day.body}</p>
+              <p className="text-[15px] text-slate leading-snug">{day.body}</p>
             </li>
           ))}
         </ol>
@@ -381,32 +375,30 @@ function AntiManifesto() {
   ];
 
   return (
-    <section id="anti" className="section bg-ink text-bone">
-      <div className="mx-auto max-w-prose px-6 md:px-10 py-20 md:py-24">
+    <section id="anti" className="section bg-obsidian text-snow">
+      <div className="mx-auto max-w-prose px-6 md:px-10 py-24 md:py-32">
         <div className="max-w-3xl">
-          <p className="marginalia text-bone-2/85">House style</p>
-          <span className="block w-9 h-[1.5px] bg-olive-2 my-4" aria-hidden="true" />
-          <h2 className="font-display font-semibold text-[40px] md:text-[56px] leading-[1.05] tracking-tightest text-bone">
+          <p className="font-mono text-[12px] tracking-[0.18em] uppercase text-snow/60">House style</p>
+          <h2 className="mt-6 font-sans font-bold text-[48px] md:text-[80px] lg:text-[96px] leading-[1.04] tracking-[-0.022em] text-snow max-w-[14ch]">
             Six things we won&rsquo;t do.
           </h2>
-          <p className="mt-5 text-[17px] md:text-[19px] text-bone-2 leading-snug max-w-2xl">
+          <p className="mt-8 text-[20px] md:text-[22px] font-light text-snow/75 leading-[1.4] tracking-[-0.010em] max-w-2xl">
             Productized services drift. The drift is always toward what scales — engagement
             tricks, automation, manufactured controversy. Bylineship is staffed thin and priced
-            high so we don&rsquo;t need to drift. Here is the list, signed by the head writer
-            and printed in every contract.
+            high so we don&rsquo;t need to drift.
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-2 gap-5">
           {antis.map((a, i) => (
             <div
               key={a.title}
-              className="bg-ink-2 border border-bone/12 p-6 flex flex-col gap-3"
+              className="bg-snow/[0.04] border border-snow/10 p-7 rounded-3xl flex flex-col gap-3"
             >
-              <p className="font-mono text-[11px] tracking-marginalia uppercase text-bone-2/70">
+              <p className="font-mono text-[11px] tracking-[0.18em] uppercase text-snow/55">
                 {String(i + 1).padStart(2, "0")} · No
               </p>
-              <h3 className="font-display font-semibold text-[24px] tracking-tightest leading-tight text-bone">
+              <h3 className="font-sans font-semibold text-[24px] tracking-[-0.016em] leading-tight text-snow">
                 <span
                   style={{
                     textDecoration: "line-through",
@@ -418,12 +410,12 @@ function AntiManifesto() {
                   {a.title}
                 </span>
               </h3>
-              <p className="text-[14.5px] text-bone-2/90 leading-snug">{a.body}</p>
+              <p className="text-[15px] text-snow/75 leading-snug">{a.body}</p>
             </div>
           ))}
         </div>
 
-        <p className="mt-12 max-w-2xl border-l-[3px] border-rust pl-5 font-display italic text-[20px] md:text-[22px] text-bone leading-snug">
+        <p className="mt-16 max-w-2xl border-l-[3px] border-snow/40 pl-6 font-serif italic text-[22px] md:text-[26px] text-snow leading-snug">
           A literary agency that won&rsquo;t take an embarrassing client is the one whose name
           on a manuscript still means something.
         </p>
@@ -490,15 +482,15 @@ function Pricing() {
   ];
 
   return (
-    <section id="pricing" className="section">
-      <div className="mx-auto max-w-prose px-6 md:px-10 py-20 md:py-24">
+    <section id="pricing" className="section bg-canvas">
+      <div className="mx-auto max-w-prose px-6 md:px-10 py-24 md:py-32">
         <SectionHeader
           eyebrow="Three retainers"
-          title="Monthly. Cancel any month. We&rsquo;d rather you stay because the writing is good."
-          lede="No setup fee — the first month is the test. Pay in USDT or USDC via NOWPayments at checkout. Annual prepay (two months free) is the only discount we offer."
+          title="Monthly. Cancel any month."
+          lede="We&rsquo;d rather you stay because the writing is good. No setup fee — the first month is the test. Pay in USDT or USDC via NOWPayments at checkout. Annual prepay (two months free) is the only discount we offer."
         />
 
-        <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-5">
           {tiers.map((tier) => (
             <article
               key={tier.id}
@@ -619,10 +611,10 @@ function Faq() {
   ];
 
   return (
-    <section id="faq" className="section bg-bone-2/30">
-      <div className="mx-auto max-w-prose px-6 md:px-10 py-20 md:py-24">
+    <section id="faq" className="section bg-fog">
+      <div className="mx-auto max-w-prose px-6 md:px-10 py-24 md:py-32">
         <SectionHeader eyebrow="FAQ" title="Seven questions, answered straight." />
-        <div className="mt-12 max-w-2xl">
+        <div className="mt-14 max-w-2xl">
           {items.map((item) => (
             <details key={item.q} className="faq">
               <summary>{item.q}</summary>
@@ -711,11 +703,13 @@ function SectionHeader({
   return (
     <div className="max-w-3xl">
       <p className="marginalia">{eyebrow}</p>
-      <span className="eyebrow-rule" aria-hidden="true" />
-      <h2 className="font-display font-semibold text-[40px] md:text-[56px] leading-[1.05] tracking-tightest text-ink">
-        {title}
-      </h2>
-      {lede ? <p className="mt-5 text-[17px] md:text-[19px] text-graphite leading-snug">{lede}</p> : null}
+      <h2
+        className="mt-5 font-sans font-bold text-[40px] md:text-[64px] lg:text-[80px] leading-[1.04] tracking-[-0.022em] text-ink"
+        dangerouslySetInnerHTML={{ __html: title }}
+      />
+      {lede ? (
+        <p className="mt-6 text-[19px] md:text-[22px] font-light text-graphite leading-[1.4] tracking-[-0.010em] max-w-2xl">{lede}</p>
+      ) : null}
     </div>
   );
 }

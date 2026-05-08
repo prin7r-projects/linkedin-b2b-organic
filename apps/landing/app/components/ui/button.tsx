@@ -2,8 +2,9 @@
 
 /**
  * [BYLINESHIP_BUTTON] Vendored from shadcn/ui (Button) and re-themed against
- * the Bylineship tokens. Square edges, ink fill, olive on hover. The source
- * is owned by this repo per the Prin7r ShadCN-first baseline (DESIGN.md §3).
+ * the Bylineship tokens. After the 2026-05-08 Apple-gallery refresh: pill
+ * geometry, obsidian fill, calm hover (opacity, not colour). Source is owned
+ * per the Prin7r ShadCN-first baseline (DESIGN.md §3).
  */
 
 import * as React from "react";
@@ -13,17 +14,17 @@ type ButtonVariant = "default" | "ghost";
 type ButtonSize = "default" | "sm" | "lg";
 
 const baseClasses =
-  "inline-flex items-center justify-center gap-2 font-sans font-medium leading-none transition-colors duration-75 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-olive disabled:opacity-50 disabled:cursor-not-allowed select-none";
+  "inline-flex items-center justify-center gap-2 font-sans font-medium leading-none rounded-full transition-opacity duration-75 focus-visible:outline focus-visible:outline-1 focus-visible:outline-offset-2 focus-visible:outline-azure disabled:opacity-50 disabled:cursor-not-allowed select-none";
 
 const variantClasses: Record<ButtonVariant, string> = {
-  default: "bg-ink text-manuscript border border-ink hover:bg-olive hover:border-olive",
-  ghost: "bg-transparent text-ink border border-ink hover:bg-ink hover:text-manuscript"
+  default: "bg-obsidian text-snow border border-obsidian hover:opacity-88",
+  ghost: "bg-transparent text-ink border border-silver-mist hover:bg-fog hover:border-graphite"
 };
 
 const sizeClasses: Record<ButtonSize, string> = {
-  default: "h-12 px-5 text-[15px]",
-  sm: "h-10 px-4 text-sm",
-  lg: "h-14 px-6 text-[17px]"
+  default: "h-12 px-6 text-[16px]",
+  sm: "h-10 px-5 text-[14px]",
+  lg: "h-14 px-7 text-[17px]"
 };
 
 export type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
@@ -40,7 +41,7 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(function 
     <button
       ref={ref}
       type={type}
-      className={cn(baseClasses, variantClasses[variant], sizeClasses[size], "rounded-none", className)}
+      className={cn(baseClasses, variantClasses[variant], sizeClasses[size], className)}
       {...props}
     />
   );
@@ -58,7 +59,7 @@ export const ButtonAnchor = React.forwardRef<HTMLAnchorElement, ButtonAnchorProp
   return (
     <a
       ref={ref}
-      className={cn(baseClasses, variantClasses[variant], sizeClasses[size], "rounded-none", className)}
+      className={cn(baseClasses, variantClasses[variant], sizeClasses[size], className)}
       {...props}
     />
   );
