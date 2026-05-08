@@ -1,5 +1,5 @@
 /**
- * [UNDERLINE_NOWPAYMENTS_CHECKOUT] POST /api/checkout/nowpayments
+ * [BYLINESHIP_NOWPAYMENTS_CHECKOUT] POST /api/checkout/nowpayments
  *
  * Body:    { plan: "founder" | "operator" | "director" }
  * Returns: { invoice_url: string, invoice_id: string, plan: string, mode: "live" }

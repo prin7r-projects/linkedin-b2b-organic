@@ -1,6 +1,6 @@
 # 01 — Brand identity
 
-> Underline is a literary agency for B2B LinkedIn — done-for-you organic growth for founders and senior operators who know they should be writing publicly but are not.
+> Bylineship is a literary agency for B2B LinkedIn — done-for-you organic growth for founders and senior operators who know they should be writing publicly but are not.
 
 ## Brand pyramid
 
@@ -11,7 +11,7 @@
 
 ## Positioning statement
 
-For B2B founders and senior operators who know LinkedIn is the right channel but cannot find the six hours a week to write well, **Underline** is a *literary agency* that ships three ghostwritten posts a week in your voice, an editorial comment plan against fifty target accounts, and a CRM-routed DM book — unlike LinkedIn coaches (who teach you to write but never write) and unlike growth hackers (who run engagement pods and bot comments) because we are six writers, we cap intake at six retainers per cohort, and we keep a printed list of things we will not do that we send back signed with every contract.
+For B2B founders and senior operators who know LinkedIn is the right channel but cannot find the six hours a week to write well, **Bylineship** is a *literary agency* that ships three ghostwritten posts a week in your voice, an editorial comment plan against fifty target accounts, and a CRM-routed DM book — unlike LinkedIn coaches (who teach you to write but never write) and unlike growth hackers (who run engagement pods and bot comments) because we are six writers, we cap intake at six retainers per cohort, and we keep a printed list of things we will not do that we send back signed with every contract.
 
 ## Audience persona — primary
 
@@ -80,14 +80,14 @@ The palette deliberately avoids LinkedIn-blue, AI-mint, and "personal brand" pur
 
 ### Logo concept
 
-A small ink-fill stamp 32×32 with an EB Garamond Bold `U` monogram in manuscript white, and a 1.5px olive editor's-underbar across the bottom — the "underline" of an editor's mark. Wordmark beside it: `Underline.` in EB Garamond 600, 20px, with the trailing period in olive.
+A small ink-fill stamp 32×32 with an EB Garamond Bold `B` monogram in manuscript white, and a 1.5px olive editor's-underbar across the bottom — a manuscript margin mark. Wordmark beside it: `Bylineship.` in EB Garamond 600, 20px, with the trailing period in olive.
 
 ```svg
 <svg viewBox="0 0 64 64" width="34" height="34">
   <rect width="64" height="64" rx="2" fill="#0B1A2A"/>
   <text x="32" y="40" text-anchor="middle"
         font-family="EB Garamond, serif" font-weight="800" font-size="36"
-        fill="#FBF7EE">U</text>
+        fill="#FBF7EE">B</text>
   <rect x="14" y="49" width="36" height="2" fill="#5B6B2F"/>
 </svg>
 ```

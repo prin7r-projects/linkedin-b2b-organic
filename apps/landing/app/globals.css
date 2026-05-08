@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 /* ---------------------------------------------------------------------------
-   [UNDERLINE_GLOBALS] Editorial-ghostwriter baseline for Underline.
+   [BYLINESHIP_GLOBALS] Editorial-ghostwriter baseline for Bylineship.
    The palette + type system are documented in /DESIGN.md sections 4-6.
    Five-color manuscript palette, three families, square edges, one shadow,
    one steady-state animation (the typing cursor on the live-draft frame).

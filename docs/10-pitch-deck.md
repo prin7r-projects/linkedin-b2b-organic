@@ -6,7 +6,7 @@
 
 ## Slide 1 — Title
 
-**Underline.**
+**Bylineship.**
 
 A literary agency for B2B LinkedIn.
 
@@ -54,7 +54,7 @@ We are six writers. We cap intake at six retainers per cohort. The cap is the br
 - LinkedIn organic reach for B2B has *recovered* in the last 18 months for accounts with strong original POV, while collapsing for everyone else. The middle ground (lazy posts, hook bait) is dead. The ceiling for thoughtful operators is higher than it has been in five years.
 - The "personal brand" SaaS market peaked in 2024 at ~$420M ARR and has declined ~22% since as detection systems caught up with engagement-pod patterns.
 - Stablecoin checkout (NOWPayments, Plisio) finally lets us collect international retainer revenue without 3-5% card-processing tax — material at $1,490-$4,990/mo retainers across 12 time zones.
-- AI-drafting tools collapsed the cost of getting from outline to first draft, but failed to capture voice. Voice is now the moat. Underline is built around voice capture, not draft speed.
+- AI-drafting tools collapsed the cost of getting from outline to first draft, but failed to capture voice. Voice is now the moat. Bylineship is built around voice capture, not draft speed.
 
 ---
 
@@ -90,7 +90,7 @@ Adjacent expansion: agency principals (CROs running 4-8 voices), public-company 
 
 (Wave 2 is pre-launch on the public landing; pre-launch traction is sourced from the founder-team's prior agency engagements.)
 
-- 73 retainers delivered across the founder-team's prior agency stack (2022-2025) before consolidating into Underline.
+- 73 retainers delivered across the founder-team's prior agency stack (2022-2025) before consolidating into Bylineship.
 - Average retention: 13 months.
 - Average month-1 → month-13 retention: 64%.
 - Internal NPS at month-3 (cohort sample): 64.

@@ -3,7 +3,7 @@ import { ButtonAnchor } from "@/app/components/ui/button";
 import { PricingCta } from "@/app/pricing-cta";
 
 /**
- * [UNDERLINE_LANDING] Single-page literary-agency landing for Underline.
+ * [BYLINESHIP_LANDING] Single-page literary-agency landing for Bylineship.
  *
  * Sections:
  *   #masthead → #hero → #service → #process → #anti → #pricing
@@ -59,7 +59,7 @@ function Masthead() {
 
 function Logo() {
   return (
-    <a href="#hero" className="flex items-center gap-3" aria-label="Underline — home">
+    <a href="#hero" className="flex items-center gap-3" aria-label="Bylineship — home">
       <span aria-hidden="true" className="inline-block">
         <svg width="34" height="34" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
           <rect x="0" y="0" width="64" height="64" rx="2" fill="#0B1A2A" />
@@ -72,13 +72,13 @@ function Logo() {
             fontSize="36"
             fill="#FBF7EE"
           >
-            U
+            B
           </text>
           <rect x="14" y="49" width="36" height="2" fill="#5B6B2F" />
         </svg>
       </span>
       <span className="font-display text-[20px] font-semibold tracking-tightest text-ink">
-        Underline<span className="text-olive">.</span>
+        Bylineship<span className="text-olive">.</span>
       </span>
     </a>
   );
@@ -141,7 +141,7 @@ function SamplePost() {
   return (
     <figure
       className="manuscript p-7 md:p-10 max-w-column md:ml-auto"
-      aria-label="A sample ghostwritten LinkedIn post drafted by Underline for an operations VP at a B2B SaaS company"
+      aria-label="A sample ghostwritten LinkedIn post drafted by Bylineship for an operations VP at a B2B SaaS company"
     >
       <header className="flex items-start gap-3 pb-4 border-b border-ink/10">
         <div
@@ -191,7 +191,7 @@ function SamplePost() {
       <footer className="pt-4 border-t border-ink/10 flex items-center justify-between gap-4 flex-wrap">
         <p className="byline">
           <span className="dot" aria-hidden="true" />
-          <span>Ghostwritten by Underline · signed off by Maya · Tuesday 6:48 am</span>
+          <span>Ghostwritten by Bylineship · signed off by Maya · Tuesday 6:48 am</span>
         </p>
         <p className="marginalia">drafted in 38 min · two revisions</p>
       </footer>
@@ -250,7 +250,7 @@ function Service() {
         <SectionHeader
           eyebrow="What the retainer gets you"
           title="A writers' room with you in the chair."
-          lede="Underline is a service business dressed as a literary agency. The product is a working studio — the cadence, the artifacts, the editor on the other end. The LLM is a tool we hold."
+          lede="Bylineship is a service business dressed as a literary agency. The product is a working studio — the cadence, the artifacts, the editor on the other end. The LLM is a tool we hold."
         />
         <div className="mt-14 grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-2 max-w-4xl">
           {items.map((item) => (
@@ -317,7 +317,7 @@ function Process() {
         />
         <ol
           className="mt-14 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-px bg-ink/12 border border-ink/12"
-          aria-label="A typical week of the Underline retainer"
+          aria-label="A typical week of the Bylineship retainer"
         >
           {days.map((day, i) => (
             <li key={day.day} className="bg-bone p-6 flex flex-col gap-3 min-h-[260px]">
@@ -391,7 +391,7 @@ function AntiManifesto() {
           </h2>
           <p className="mt-5 text-[17px] md:text-[19px] text-bone-2 leading-snug max-w-2xl">
             Productized services drift. The drift is always toward what scales — engagement
-            tricks, automation, manufactured controversy. Underline is staffed thin and priced
+            tricks, automation, manufactured controversy. Bylineship is staffed thin and priced
             high so we don&rsquo;t need to drift. Here is the list, signed by the head writer
             and printed in every contract.
           </p>
@@ -598,7 +598,7 @@ function Faq() {
     },
     {
       q: "How is this different from a LinkedIn coach or a fractional CMO?",
-      a: "A coach teaches you to write; we write. A fractional CMO designs your funnel; we operate the top of it. We are not strategy and not training. We are the writer's room and the comment desk. If you've already tried a coach and you still aren't posting, that's the gap Underline is built for."
+      a: "A coach teaches you to write; we write. A fractional CMO designs your funnel; we operate the top of it. We are not strategy and not training. We are the writer's room and the comment desk. If you've already tried a coach and you still aren't posting, that's the gap Bylineship is built for."
     },
     {
       q: "What happens to my following if we stop?",
@@ -646,7 +646,7 @@ function Footer() {
         <div className="md:col-span-6 flex flex-col gap-4">
           <Logo />
           <p className="max-w-md text-[14.5px] text-graphite leading-snug">
-            Underline is a literary agency for B2B LinkedIn — three ghostwritten posts a week
+            Bylineship is a literary agency for B2B LinkedIn — three ghostwritten posts a week
             in your voice, an editorial comment plan on your target accounts, and a DM book
             that lands meetings. Six writers, six retainers per cohort. Built in 2026 by the
             prin7r-projects studio.

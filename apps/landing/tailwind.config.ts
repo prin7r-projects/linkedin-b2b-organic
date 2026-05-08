@@ -1,8 +1,8 @@
 import type { Config } from "tailwindcss";
 
 /**
- * [UNDERLINE_TAILWIND] Locked tokens for the linkedin-b2b-organic landing.
- * Source of truth for the Underline palette + type pair. Mirrored in
+ * [BYLINESHIP_TAILWIND] Locked tokens for the linkedin-b2b-organic landing.
+ * Source of truth for the Bylineship palette + type pair. Mirrored in
  * `app/globals.css` and documented in /DESIGN.md sections 4-6.
  */
 

@@ -1,6 +1,6 @@
-# DESIGN.md — Underline
+# DESIGN.md — Bylineship
 
-> Canonical design + style guide for `linkedin-b2b-organic` (brand: **Underline**).
+> Canonical design + style guide for `linkedin-b2b-organic` (brand: **Bylineship**).
 > Owned by Chief of Design. Kept in sync with `apps/landing/` — any landing-page change updates this file in the same commit.
 
 The visual identity is sourced from [`docs/01-brand-identity.md`](docs/01-brand-identity.md). This document is the implementation-facing translation of that identity into tokens, components, layout rules, and verification artifacts.
@@ -9,7 +9,7 @@ The visual identity is sourced from [`docs/01-brand-identity.md`](docs/01-brand-
 
 ## 1. Product and audience
 
-**Product** — Underline is a done-for-you LinkedIn organic-growth retainer for B2B founders and senior operators. The deliverable is a working *writers' room*: three ghostwritten posts a week in the founder's voice, an editorial comment plan against fifty target accounts, a living DM book, and CRM webhook routing of replies-with-intent. The retainer is monthly, capped at six clients per cohort, and intake closes the first Monday of the month. It is positioned as a **literary agency**, not a "personal brand" SaaS.
+**Product** — Bylineship is a done-for-you LinkedIn organic-growth retainer for B2B founders and senior operators. The deliverable is a working *writers' room*: three ghostwritten posts a week in the founder's voice, an editorial comment plan against fifty target accounts, a living DM book, and CRM webhook routing of replies-with-intent. The retainer is monthly, capped at six clients per cohort, and intake closes the first Monday of the month. It is positioned as a **literary agency**, not a "personal brand" SaaS.
 
 **Audience** —
 - **Maya, the operations VP**: 36-50, runs a 60-200 person B2B SaaS company, technically fluent, knows she should be writing publicly but cannot find the 6 hours/week. Reads Stratechery, Lenny's, Lex column. Hates thumbnails with arrows on them.
@@ -31,7 +31,7 @@ A literary agency dressed for the open page.
 
 **Baseline.** This repo follows the Prin7r Component Library Baseline (ShadCN-first). Default base for any future SaaS surface in `apps/app/` is shadcn/ui — install via `pnpm dlx shadcn@latest add <component>`, vendor the source into the project so we own and review every primitive.
 
-**Current state — Wave 2 batch landing.** `apps/landing/` uses **two ShadCN primitives** vendored under `app/components/ui/` (`Button`, `Card`) and re-themed against the Underline tokens in section 4. The remainder of the landing is hand-coded — the literary-agency aesthetic is carried by typography, hairlines, the manuscript-frame component, the ledger row, and a five-color print palette. We will add primitives as the dashboard surface lands in `apps/app/`.
+**Current state — Wave 2 batch landing.** `apps/landing/` uses **two ShadCN primitives** vendored under `app/components/ui/` (`Button`, `Card`) and re-themed against the Bylineship tokens in section 4. The remainder of the landing is hand-coded — the literary-agency aesthetic is carried by typography, hairlines, the manuscript-frame component, the ledger row, and a five-color print palette. We will add primitives as the dashboard surface lands in `apps/app/`.
 
 **Documented exceptions.** The `Button` and `Card` primitives are vendored from ShadCN but reset to `radius: 0`, ink-fill ink-text, and the hairline border tokens — the source of truth for those resets is `apps/landing/app/globals.css`. The day-numerals, the ledger rows, the manuscript frame, the typing cursor on the sample post, the anti-feature crossed-out cards, and the pull-quote are hand-coded in `apps/landing/app/page.tsx` and `globals.css`.
 
@@ -60,7 +60,7 @@ Single source of truth: `apps/landing/tailwind.config.ts` and `apps/landing/app/
 
 ## 5. Typography
 
-Three families. No fourth font. Pairing is deliberately *not* the all-sans tech aesthetic — Underline reads as a literary agency, not as a SaaS, and not as a LinkedIn-creator's bio.
+Three families. No fourth font. Pairing is deliberately *not* the all-sans tech aesthetic — Bylineship reads as a literary agency, not as a SaaS, and not as a LinkedIn-creator's bio.
 
 | Role | Family | Weights | Used at | Reason |
 |------|--------|---------|---------|--------|
@@ -97,10 +97,10 @@ All components are local (in `apps/landing/app/page.tsx` or `apps/landing/app/co
 
 | Component | Where defined | Notes |
 |-----------|---------------|-------|
-| `Logo` | `page.tsx` Masthead | Ink-fill stamp 32×32, manuscript Garamond Bold `U` monogram, 1.5px olive underbar. Garamond `Underline.` wordmark with trailing olive period. |
+| `Logo` | `page.tsx` Masthead | Ink-fill stamp 32×32, manuscript Garamond Bold `B` monogram, 1.5px olive underbar. Garamond `Bylineship.` wordmark with trailing olive period. |
 | `Button` | `components/ui/button.tsx` (vendored from ShadCN; re-themed) | Square-edged, ink fill, 14×22px padding. Hover swaps to olive fill. Focus inherits `:focus-visible` ring (kept visible). |
 | `Card` | `components/ui/card.tsx` (vendored from ShadCN; re-themed) | Square-edged bone surface, 1px ink/15 hairline. No shadow. |
-| `SamplePost` | `page.tsx` Hero | The brand statement. A real-looking ghostwritten LinkedIn post on a manuscript surface, with avatar, name, role, dateline, body in Garamond italic-leading prose, a final-line punch with a blinking olive cursor, and a footer byline crediting Underline. |
+| `SamplePost` | `page.tsx` Hero | The brand statement. A real-looking ghostwritten LinkedIn post on a manuscript surface, with avatar, name, role, dateline, body in Garamond italic-leading prose, a final-line punch with a blinking olive cursor, and a footer byline crediting Bylineship. |
 | `Manuscript` | `globals.css` `.manuscript` | The visual frame for the sample post and the agency-tier card. Manuscript surface, 1px hairline, soft shadow, a subtle vertical rust line at 56px from the left to mimic a margin rule. |
 | `LedgerRow` | `globals.css` `.ledger` | Two-column row used in the service block. 64px Garamond `01-06` numeral in olive on the left, headline + body on the right, dashed bottom border. |
 | `WeekCell` | `page.tsx` Process | Five 260px-min cells, day name in mono caps, large olive numeric day index, headline in Garamond, copy in Inter. |
@@ -133,7 +133,7 @@ This wave ships **no raster imagery in the hero**. The hero accent is purely typ
 If `prin7r-generate-image` (GPT Image 2) becomes useful for an additional editorial asset in the polish pass, the prompt rules:
 
 - Composition — desk-flat, top-down, single object on bone paper. A pen, a stack of pages, a fountain-pen nib resting on a manuscript margin.
-- Color — must read as the Underline palette (bone, ink, olive accent only).
+- Color — must read as the Bylineship palette (bone, ink, olive accent only).
 - Aspect — 3:2 for hero; 1:1 for footer; nothing else.
 - No people, no faces, no LinkedIn screenshots, no chat-bubble icons, no laptops. Hands holding a pen are allowed if shot top-down on bone paper.
 
@@ -157,7 +157,7 @@ At most one element animates at any time.
 - **Color contrast.** Body text 13.3:1 (ink on bone). All interactive elements meet 4.5:1 in default and hover states. Olive on bone is 4.5:1 — used only for ≥14px text and short labels.
 - **Focus.** All interactive elements ship with a visible `:focus-visible` ring (1.5px olive outline, 2px offset). Tab order: skip-to-content → masthead nav → hero CTAs → tier CTAs → FAQ summaries → footer links.
 - **Semantics.** `<header>`, `<main>`, `<section>` with `aria-label`, `<footer>`, `<nav aria-label>`, `<figure aria-label>` on the sample post, `<details>`/`<summary>` on the FAQ.
-- **Alt text.** No `alt=""` on meaningful icons. The `Logo` SVG has `role="img"` and `aria-label="Underline"`. The `SamplePost` figure has an `aria-label` describing it as a sample ghostwritten post. The avatar block is `aria-hidden="true"` (decorative initials).
+- **Alt text.** No `alt=""` on meaningful icons. The `Logo` SVG has `role="img"` and `aria-label="Bylineship"`. The `SamplePost` figure has an `aria-label` describing it as a sample ghostwritten post. The avatar block is `aria-hidden="true"` (decorative initials).
 - **Forms.** No native form on the landing. The desk CTAs are `mailto:` links with `aria-label` describing destination.
 - **No-JS.** Page is fully readable with JS disabled. Only the NOWPayments CTAs require JS (a fetch + redirect); they degrade visibly to an error message that points to the head writer's email when JS or the API fails.
 
@@ -178,7 +178,7 @@ Captured via Playwright headless Chromium on the deployed URL (not localhost). R
 - **Google Fonts** — EB Garamond, Inter, IBM Plex Mono. Loaded via `<link>` import in `app/globals.css`.
 - **Tailwind CSS 3.4** — utility-first; tokens locked in `tailwind.config.ts`.
 - **Refero Styles** (reference gallery) — <https://styles.refero.design/>. Browsed for editorial-serif references; nothing copied.
-- **Cited reference (sister Wave 2 build)** — `/Users/keer/projects/prin7r/wave2-builds/chatbot-agency/`. Used as a structural reference (DESIGN.md shape, the nowpayments wiring) but **not** as a visual reference. Dispatch's forest/carmine palette is theirs; Underline's navy/olive palette is ours, paired with EB Garamond instead of Fraunces and with the manuscript-frame component as our distinguishing motif.
+- **Cited reference (sister Wave 2 build)** — `/Users/keer/projects/prin7r/wave2-builds/chatbot-agency/`. Used as a structural reference (DESIGN.md shape, the nowpayments wiring) but **not** as a visual reference. Dispatch's forest/carmine palette is theirs; Bylineship's navy/olive palette is ours, paired with EB Garamond instead of Fraunces and with the manuscript-frame component as our distinguishing motif.
 - **NOWPayments** — hosted invoice + IPN docs. Implementation copied from `payments-prototypes/src/lib/signatures.ts` (HMAC-SHA512 verifier).
 
 ## 15. Changelog
@@ -187,3 +187,4 @@ Captured via Playwright headless Chromium on the deployed URL (not localhost). R
 |---|---|---|
 | 2026-05-08 | Initial Wave 2 build. Hero (with manuscript-framed sample ghostwritten post), service ledger, week strip, anti-feature manifesto on inverted ink surface, three-tier pricing with NOWPayments CTAs, seven-question FAQ, footer. NOWPayments hosted-invoice route + HMAC-SHA512 IPN webhook wired. Vendored ShadCN `Button` + `Card`. | `apps/landing/` |
 | 2026-05-08 | DESIGN.md authored at root. 10 strategy docs published under `docs/`. Pitch deck HTML + Markdown shipped. Desktop + mobile screenshots captured against production. | repo root + `docs/` |
+| 2026-05-08 | Rebrand: **Underline → Bylineship**. Wave 2 name research flagged Underline FAIL (underline.com is an active fiber-network company; "underline" carries heavy unrelated meanings). Bylineship aligns with the existing literary-agency / ghostwriter positioning. Logo monogram swapped from `U` to `B`; wordmark, og:title, metadata, debug tags, and copy updated repo-wide. Visual essence (editorial-ghostwriter, serif-magazine palette, manuscript frame) unchanged. | repo-wide |

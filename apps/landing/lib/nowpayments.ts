@@ -1,5 +1,5 @@
 /**
- * [UNDERLINE_NOWPAYMENTS] Server-side helpers for the NOWPayments hosted invoice.
+ * [BYLINESHIP_NOWPAYMENTS] Server-side helpers for the NOWPayments hosted invoice.
  *
  * - `PLANS` maps the three retainer tiers visible on the landing to their
  *   first-month USD price + checkout copy. We charge the first month at
@@ -27,21 +27,21 @@ export type Plan = {
 export const PLANS: Record<PlanId, Plan> = {
   founder: {
     id: "founder",
-    name: "Underline — Founder retainer (first month)",
+    name: "Bylineship — Founder retainer (first month)",
     monthlyUsd: 1490,
     description:
       "Founder retainer, first month. 60-min weekly editorial call. 2 ghostwritten posts/week (8/month) in your voice, signed off before publish. Comment plan on 30 target accounts. DM follow-up draft library. Email + Telegram for the writing room."
   },
   operator: {
     id: "operator",
-    name: "Underline — Operator retainer (first month)",
+    name: "Bylineship — Operator retainer (first month)",
     monthlyUsd: 2990,
     description:
       "Operator retainer, first month. Two 45-min editorial calls per week. 3 ghostwritten posts/week (12/month). Comment-engine on 50 target accounts (15 thoughtful comments/week, signed off in advance). DM book with weekly playbook. CRM webhook routing — DMs that become calls land in HubSpot or Pipedrive."
   },
   director: {
     id: "director",
-    name: "Underline — Director retainer (first month)",
+    name: "Bylineship — Director retainer (first month)",
     monthlyUsd: 4990,
     description:
       "Director retainer, first month. Daily editorial slot (15-min check-ins). 5 ghostwritten posts/week (20/month). Comment-engine on 100 target accounts. DM book + a quarterly point-of-view essay (1,500-2,000 words). White-glove CRM integration with sales-ops review. Direct line to the head writer."
@@ -74,7 +74,7 @@ export async function createNowpaymentsInvoice(input: CreateInvoiceInput): Promi
   const sandbox = (optionalEnv("NOWPAYMENTS_SANDBOX") ?? "false").toLowerCase() === "true";
   const apiBase = sandbox ? "https://api-sandbox.nowpayments.io" : "https://api.nowpayments.io";
 
-  const orderId = `underline_${input.plan.id}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
+  const orderId = `bylineship_${input.plan.id}_${Date.now()}_${Math.random().toString(36).slice(2, 8)}`;
 
   const body = {
     price_amount: input.plan.monthlyUsd,

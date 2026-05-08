@@ -1,6 +1,6 @@
 # 08 — Marketing strategy
 
-> Underline's marketing is its work. We don't broadcast; we execute and the execution is the marketing. This doc captures positioning, messaging hierarchy, content pillars, and the editorial principles a writer or designer should hold in front of them when they touch any Underline-owned surface.
+> Bylineship's marketing is its work. We don't broadcast; we execute and the execution is the marketing. This doc captures positioning, messaging hierarchy, content pillars, and the editorial principles a writer or designer should hold in front of them when they touch any Bylineship-owned surface.
 
 ## Positioning
 
@@ -14,7 +14,7 @@ The category is *new*. There are LinkedIn coaches, ghostwriters, content agencie
 
 ## Positioning statement
 
-For B2B founders and senior operators who know LinkedIn is the right channel but cannot find the six hours a week to write well, Underline is a literary agency that ships three ghostwritten posts a week in your voice, an editorial comment plan against fifty target accounts, and a CRM-routed DM book — unlike LinkedIn coaches (who teach you to write but never write) and unlike growth hackers (who run engagement pods and bot comments) because we are six writers, we cap intake at six retainers per cohort, and we keep a printed list of things we will not do that we send back signed with every contract.
+For B2B founders and senior operators who know LinkedIn is the right channel but cannot find the six hours a week to write well, Bylineship is a literary agency that ships three ghostwritten posts a week in your voice, an editorial comment plan against fifty target accounts, and a CRM-routed DM book — unlike LinkedIn coaches (who teach you to write but never write) and unlike growth hackers (who run engagement pods and bot comments) because we are six writers, we cap intake at six retainers per cohort, and we keep a printed list of things we will not do that we send back signed with every contract.
 
 ## Messaging hierarchy
 
@@ -26,7 +26,7 @@ Used in the hero. Five words plus a contraction. Rejects every common LinkedIn-a
 
 ### Layer 2 — One paragraph (the sub-hero / cold-intro reply)
 
-> Underline is a literary agency for B2B LinkedIn. Three ghostwritten posts a week, in your voice. An editorial comment plan on fifty target accounts. A DM book that lands meetings. No engagement pods, no bots, no clickbait hooks. Six writers, six retainers per cohort.
+> Bylineship is a literary agency for B2B LinkedIn. Three ghostwritten posts a week, in your voice. An editorial comment plan on fifty target accounts. A DM book that lands meetings. No engagement pods, no bots, no clickbait hooks. Six writers, six retainers per cohort.
 
 ### Layer 3 — One page (the landing)
 
@@ -46,7 +46,7 @@ The full landing at `linkedin-b2b-organic.prin7r.com`. Eight sections in this or
 
 ## Content pillars (the three things we write about)
 
-Every Underline marketing artefact (and every comment on the comment-engine when it surfaces our voice) ladders up to one of three pillars. We do not write outside them.
+Every Bylineship marketing artefact (and every comment on the comment-engine when it surfaces our voice) ladders up to one of three pillars. We do not write outside them.
 
 ### Pillar 1 — Craft
 

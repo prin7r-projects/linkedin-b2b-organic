@@ -1,6 +1,6 @@
 # 09 — Go-to-market (90-day plan)
 
-> The first 90 days of Underline going public, week by week. Keeps cohort intake constraints (six retainers per month) front-and-center. The launch is deliberately quiet — a literary-agency announcement should not announce itself like a SaaS launch.
+> The first 90 days of Bylineship going public, week by week. Keeps cohort intake constraints (six retainers per month) front-and-center. The launch is deliberately quiet — a literary-agency announcement should not announce itself like a SaaS launch.
 
 ## Pre-launch (Day -7 to Day 0)
 
@@ -12,7 +12,7 @@
 | -5 | Head writer | Send 12 hand-written intro emails to peer-network operators, with the landing URL and one paragraph of context. NO calls-to-action. |
 | -3 | Head writer | Draft cohort-1 onboarding kit (Telegram channel templates, voice-intake recording deck) |
 | -1 | Head writer | Sign two cohort-1 retainers verbally, hold their NOWPayments invoices to send on Day 0 |
-| 0 | Head writer | Day-0 post on the head writer's personal LinkedIn (200 words, not 2,000): *"I'm starting Underline. Six retainers per cohort. We close intake the first Monday of every month. Here's the URL. Here's the anti-feature list. Don't tag me, don't 'congrats!' me. Read the list."* |
+| 0 | Head writer | Day-0 post on the head writer's personal LinkedIn (200 words, not 2,000): *"I'm starting Bylineship. Six retainers per cohort. We close intake the first Monday of every month. Here's the URL. Here's the anti-feature list. Don't tag me, don't 'congrats!' me. Read the list."* |
 
 ## Month 1 — cohort 1 (six retainers)
 
@@ -64,7 +64,7 @@
 
 ### Week 10 (Day 68-74)
 - Cohort-3 voice intakes.
-- Two of the founder-team-network cohort-1 retainers introduce Underline to their lead investor's portfolio CMO. One investor meeting books for week 12.
+- Two of the founder-team-network cohort-1 retainers introduce Bylineship to their lead investor's portfolio CMO. One investor meeting books for week 12.
 
 ### Week 11 (Day 75-81)
 - Cohort-3 first posts ship.
@@ -99,7 +99,7 @@ That is the entire launch.
 
 - Open the founder-circle peer wait-list (estimated 50+ names by Day 91).
 - Add a guest-spot per cohort (one 5-week trial retainer for a credible non-paying founder who agrees to write publicly about the experience).
-- First "Underline house style" essay published as `/notes` on the subdomain (one piece of tradecraft per quarter).
+- First "Bylineship house style" essay published as `/notes` on the subdomain (one piece of tradecraft per quarter).
 - Hire third senior writer (full-time, Lisbon-based). Cohort cap rises to 8 in Q3 once the third writer is shipping cleanly.
 
 ## Risks tracked weekly

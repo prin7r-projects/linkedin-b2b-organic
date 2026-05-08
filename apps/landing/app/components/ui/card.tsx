@@ -1,5 +1,5 @@
 /**
- * [UNDERLINE_CARD] Vendored from shadcn/ui (Card) and re-themed for Underline.
+ * [BYLINESHIP_CARD] Vendored from shadcn/ui (Card) and re-themed for Bylineship.
  * Square edges, bone surface, hairline border. The source is owned by this
  * repo per the Prin7r ShadCN-first baseline (DESIGN.md §3).
  */

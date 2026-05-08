@@ -1,6 +1,6 @@
 # 06 — Sales channels
 
-> Underline's revenue is high-touch. Six retainers per cohort, one cohort per month, twelve-to-eighteen retainers under management at any time. The channel mix reflects that — narrow, expensive, high-trust.
+> Bylineship's revenue is high-touch. Six retainers per cohort, one cohort per month, twelve-to-eighteen retainers under management at any time. The channel mix reflects that — narrow, expensive, high-trust.
 
 ## Channel mix (target month, intake of 6 retainers)
 
@@ -20,7 +20,7 @@ The math is deliberately narrow: at 6 retainers per cohort, we cannot scale acqu
 
 ### 1. Existing-retainer referral (40%)
 
-**Mechanism.** Twice during a retainer's life — after month-2 and after month-9 — the head writer asks the principal: "Who in your immediate network would benefit from this?" We send a one-line intro template. The principal forwards it (or doesn't). No incentive, no payment, no kickback. We don't want our retainers selling Underline.
+**Mechanism.** Twice during a retainer's life — after month-2 and after month-9 — the head writer asks the principal: "Who in your immediate network would benefit from this?" We send a one-line intro template. The principal forwards it (or doesn't). No incentive, no payment, no kickback. We don't want our retainers selling Bylineship.
 
 **Why no referral fee.** A principal who refers a peer for $500 of credit damages the referral signal. The principal recommending us has to be doing it for craft reasons, or the recommendation is decoupled from quality.
 
@@ -30,16 +30,16 @@ The math is deliberately narrow: at 6 retainers per cohort, we cannot scale acqu
 
 ### 2. The work itself — organic discovery via ghostwritten posts (30%)
 
-**Mechanism.** Every Underline-ghostwritten post is signed off in the principal's name. There is no "ghostwritten by Underline" badge on the post itself. But the *style* — first-sentence-in-action, no hooks, single concrete artifact, willing to be embarrassed — is detectable to readers who care about craft. They open the principal's profile, sometimes find Underline mentioned in their featured links, sometimes ask the principal "who do you work with?" off-platform.
+**Mechanism.** Every Bylineship-ghostwritten post is signed off in the principal's name. There is no "ghostwritten by Bylineship" badge on the post itself. But the *style* — first-sentence-in-action, no hooks, single concrete artifact, willing to be embarrassed — is detectable to readers who care about craft. They open the principal's profile, sometimes find Bylineship mentioned in their featured links, sometimes ask the principal "who do you work with?" off-platform.
 
-**The visible signal.** Our comment-engine signature line ("— Underline reading list this week:") on a ~10% of comments is the only on-platform attribution we ship. It's small, deliberate, ignorable.
+**The visible signal.** Our comment-engine signature line ("— Bylineship reading list this week:") on a ~10% of comments is the only on-platform attribution we ship. It's small, deliberate, ignorable.
 
 **Conversion path.**
 1. Reader sees a ghostwritten post on their feed.
 2. Reader clicks the principal's profile (~12% of high-engagement posts surface ≥1 such click per 100 impressions).
 3. Reader scrolls the principal's recent activity, notices the consistency.
 4. Reader opens a DM ("who's writing your posts?") OR Googles the principal's name + "ghostwriter".
-5. Reader lands on the principal's bio, sees Underline as featured link, clicks through.
+5. Reader lands on the principal's bio, sees Bylineship as featured link, clicks through.
 6. Reader lands on `linkedin-b2b-organic.prin7r.com`.
 
 This funnel is slow and indirect. It accounts for ~30% of revenue but ~70% of cohort-eligible discovery surface.
@@ -53,7 +53,7 @@ This funnel is slow and indirect. It accounts for ~30% of revenue but ~70% of co
 - *Acquired* listener Slack — three regional rooms.
 - A small "B2B operators on LinkedIn" Slack (invite-only, ~120 people, founded by a Series-A SaaS CEO who is one of our retainers).
 
-**Cadence.** The head writer participates in two of these per week. We answer technical questions about LinkedIn craft when asked. We never broadcast Underline. About once a quarter, we publish a one-page write-up of an internal experiment (e.g. "What we tested with comment dwell time") inside one of these channels.
+**Cadence.** The head writer participates in two of these per week. We answer technical questions about LinkedIn craft when asked. We never broadcast Bylineship. About once a quarter, we publish a one-page write-up of an internal experiment (e.g. "What we tested with comment dwell time") inside one of these channels.
 
 **Conversion path.** A member sees the head writer answer a technical question, DMs the head writer 2-6 weeks later, ends up on an intake call.
 
@@ -61,7 +61,7 @@ This funnel is slow and indirect. It accounts for ~30% of revenue but ~70% of co
 
 ### 4. Investor portfolio intros (8%)
 
-**Mechanism.** Once a CEO retainer has delivered visibly for 4+ months, we invite their lead investor to a 30-min head-writer call. Half decline. Half accept and add Underline to their internal "vetted vendors for portfolio" page. From there, ~1 portfolio intro per quarter per fund lands.
+**Mechanism.** Once a CEO retainer has delivered visibly for 4+ months, we invite their lead investor to a 30-min head-writer call. Half decline. Half accept and add Bylineship to their internal "vetted vendors for portfolio" page. From there, ~1 portfolio intro per quarter per fund lands.
 
 **Funds we currently work with (anonymous summary).** Two seed funds + one Series-A fund focused on B2B SaaS. We don't list names — fund partners are private about vendor stacks.
 
@@ -69,7 +69,7 @@ This funnel is slow and indirect. It accounts for ~30% of revenue but ~70% of co
 
 ### 5. The agency-principal / two-team retainer (2%)
 
-A CRO inside one of our existing CEO retainers reaches out to retain Underline for 4-8 voices in their org. Lumpy: 0-2 per year. Pricing is custom (typically $9-15k/month for 4 voices). Not the volume engine; the upside ceiling.
+A CRO inside one of our existing CEO retainers reaches out to retain Bylineship for 4-8 voices in their org. Lumpy: 0-2 per year. Pricing is custom (typically $9-15k/month for 4 voices). Not the volume engine; the upside ceiling.
 
 ## What we don't do, and why
 
@@ -88,5 +88,5 @@ A CRO inside one of our existing CEO retainers reaches out to retain Underline f
 
 ## Channels we'll add in 2027 (deferred)
 
-- A quarterly *"Underline house style"* essay published as an unbranded subdomain (`/notes`) with one piece of tradecraft per quarter. The audience is principals who want to write better, not buy our retainer. Lead-gen value is intentionally indirect.
+- A quarterly *"Bylineship house style"* essay published as an unbranded subdomain (`/notes`) with one piece of tradecraft per quarter. The audience is principals who want to write better, not buy our retainer. Lead-gen value is intentionally indirect.
 - A 2-3 person CRO advisory list inside Pavilion (pay-walled), where the head writer holds office hours twice a quarter.

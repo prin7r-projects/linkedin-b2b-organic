@@ -1,8 +1,8 @@
 "use client";
 
 /**
- * [UNDERLINE_BUTTON] Vendored from shadcn/ui (Button) and re-themed against
- * the Underline tokens. Square edges, ink fill, olive on hover. The source
+ * [BYLINESHIP_BUTTON] Vendored from shadcn/ui (Button) and re-themed against
+ * the Bylineship tokens. Square edges, ink fill, olive on hover. The source
  * is owned by this repo per the Prin7r ShadCN-first baseline (DESIGN.md §3).
  */
 

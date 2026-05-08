@@ -104,7 +104,7 @@ When `apps/app/` ships, the IPN handler will additionally write to a Postgres `o
 - **Reverse proxy** — `dokploy-traefik` running in host network mode with `exposedByDefault=false`. Picks up our container via Docker labels, no `dokploy-network` reference needed.
 - **TLS** — letsencrypt HTTP-01 resolver `letsencrypt`, account `kee22r@gmail.com`. Issued automatically on first request.
 - **Storage** — bind-mount only for the `.env` file (read into the container via `env_file: - .env`). No persistent volumes.
-- **Logs** — `docker logs linkedin-b2b-organic-landing` writes to journalctl on the host. The IPN handler emits `[UNDERLINE_NOWPAYMENTS_IPN]` tagged lines for audit.
+- **Logs** — `docker logs linkedin-b2b-organic-landing` writes to journalctl on the host. The IPN handler emits `[BYLINESHIP_NOWPAYMENTS_IPN]` tagged lines for audit.
 
 ## Security posture
 

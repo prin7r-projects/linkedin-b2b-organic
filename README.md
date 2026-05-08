@@ -1,4 +1,4 @@
-# Underline — a literary agency for B2B LinkedIn · `linkedin-b2b-organic.prin7r.com`
+# Bylineship — a literary agency for B2B LinkedIn · `linkedin-b2b-organic.prin7r.com`
 
 > Done-for-you LinkedIn organic growth for B2B founders and senior operators. Three ghostwritten posts a week in your voice, an editorial comment plan against fifty target accounts, a DM book that lands meetings. No engagement pods, no bots, no clickbait hooks. Six writers, six retainers per cohort.
 
@@ -25,7 +25,7 @@
 
 - A 15-section [`DESIGN.md`](./DESIGN.md) at root.
 - The 10 strategy / design docs under [`docs/`](./docs/) — brand identity, architecture, journeys, pain points, audience, channels, sales, marketing, GTM, pitch deck (with companion `pitch-deck.html`).
-- A hand-coded Next.js 15 landing at [`apps/landing/`](./apps/landing/) with ShadCN-vendored Button + Card primitives re-themed to the Underline tokens, a manuscript-framed sample ghostwritten post as the visual hero, and an inverted "anti-feature manifesto" section.
+- A hand-coded Next.js 15 landing at [`apps/landing/`](./apps/landing/) with ShadCN-vendored Button + Card primitives re-themed to the Bylineship tokens, a manuscript-framed sample ghostwritten post as the visual hero, and an inverted "anti-feature manifesto" section.
 - NOWPayments hosted-invoice route at [`/api/checkout/nowpayments`](./apps/landing/app/api/checkout/nowpayments/route.ts) and HMAC-SHA512 IPN webhook at [`/api/webhooks/nowpayments`](./apps/landing/app/api/webhooks/nowpayments/route.ts).
 - A Dockerfile + docker-compose for deployment to `storage-contabo` behind Traefik with Let's Encrypt.
 - Desktop + mobile production screenshots under [`docs/screenshots/`](./docs/screenshots/).

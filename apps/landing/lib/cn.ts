@@ -1,5 +1,5 @@
 /**
- * [UNDERLINE_CN] Tiny class merge helper. Used by the vendored shadcn/ui
+ * [BYLINESHIP_CN] Tiny class merge helper. Used by the vendored shadcn/ui
  * primitives so the source matches the upstream signature.
  */
 

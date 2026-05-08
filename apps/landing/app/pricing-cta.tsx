@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * [UNDERLINE_PRICING_CTA] Client island for each pricing-tier "Take retainer" button.
+ * [BYLINESHIP_PRICING_CTA] Client island for each pricing-tier "Take retainer" button.
  *
  * Posts to /api/checkout/nowpayments and redirects to the hosted invoice URL.
  * Falls back to a mailto when JS is disabled (the partner-CTA in

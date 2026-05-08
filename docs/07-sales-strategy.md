@@ -12,7 +12,7 @@
 
 ## Why this motion (not a SaaS-style sales team)
 
-| Lever | Underline | A typical SaaS sales team |
+| Lever | Bylineship | A typical SaaS sales team |
 |---|---|---|
 | Channel | High-trust referral + organic discovery | Outbound + inbound at scale |
 | Sales cycle | 4-21 days | 30-180 days |

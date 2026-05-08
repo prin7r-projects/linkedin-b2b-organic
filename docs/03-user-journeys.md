@@ -1,12 +1,12 @@
 # 03 — User journeys
 
-> Three journeys covering discovery, first value, and the recurring-use loop. Underline is high-touch; every journey assumes a human reads at least one email and joins at least one call.
+> Three journeys covering discovery, first value, and the recurring-use loop. Bylineship is high-touch; every journey assumes a human reads at least one email and joins at least one call.
 
 ## Journey 1 — Discovery → first call (a Maya-shaped operations VP)
 
-**Entry** — Maya scrolls LinkedIn at 7:08 am on a Tuesday. A senior writer she follows (Underline-ghostwritten without her knowing it) has posted a thoughtful piece on renewal-cycle time. The comment thread features substantive responses — including one from "Underline" signed by the head writer.
+**Entry** — Maya scrolls LinkedIn at 7:08 am on a Tuesday. A senior writer she follows (Bylineship-ghostwritten without her knowing it) has posted a thoughtful piece on renewal-cycle time. The comment thread features substantive responses — including one from "Bylineship" signed by the head writer.
 
-**Step 1 (zero-cost)** — She clicks the Underline profile, lands on `linkedin-b2b-organic.prin7r.com`. The hero shows a sample ghostwritten post that reads exactly like a Stratechery email — first sentence is a CFO conversation, not a hook. The blinking olive cursor at the end of the last line catches her eye for 0.4s.
+**Step 1 (zero-cost)** — She clicks the Bylineship profile, lands on `linkedin-b2b-organic.prin7r.com`. The hero shows a sample ghostwritten post that reads exactly like a Stratechery email — first sentence is a CFO conversation, not a hook. The blinking olive cursor at the end of the last line catches her eye for 0.4s.
 
 **Step 2 (low friction)** — She scrolls to the service ledger (`#service`). She reads "We will not write hook bait" in the anti-manifesto. She closes the tab and opens her Notion to look at her calendar.
 
@@ -49,7 +49,7 @@
 - **Thursday** — Post #2 ships. DM book updated.
 - **Friday** — Post #3 ships. Maya sends 4 DMs the writers drafted (only Maya presses send). A reply from a Series-C CIO who saw her Tuesday post asks for "15 minutes next week to compare notes on renewal cadence."
 
-**The webhook fires** — The CIO's reply contains `>= 1 of {"meeting", "15 minutes", "compare notes", "discovery", "call"}` — the threshold for "intent". The Underline DM router writes a webhook to Maya's HubSpot:
+**The webhook fires** — The CIO's reply contains `>= 1 of {"meeting", "15 minutes", "compare notes", "discovery", "call"}` — the threshold for "intent". The Bylineship DM router writes a webhook to Maya's HubSpot:
 - New contact: name + LinkedIn URL + role + company.
 - New deal in `Inbound · LinkedIn` pipeline, $0 expected, source = LinkedIn DM.
 - Note attached: the LinkedIn permalink + the last 3 messages in the thread.
@@ -59,7 +59,7 @@
 **End-of-month report (last Friday)** — One page lands in her Telegram. Four numbers, no charts:
 - Followers: 1,420 → 1,847 (+30%).
 - Comment-engine relationships started: 41 (target accounts who replied substantively).
-- DMs sent (drafted by Underline, signed off by Maya): 16.
+- DMs sent (drafted by Bylineship, signed off by Maya): 16.
 - DMs that became a meeting: 3.
 
 **Recurring loop** — She doesn't think about LinkedIn between Mondays. She presses send on Friday DMs. She reads the monthly report on the last Friday. The retainer auto-renews; she stays for thirteen months on average.

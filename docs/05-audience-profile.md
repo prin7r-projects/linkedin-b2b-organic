@@ -30,7 +30,7 @@ A retainer is a fit when **all five** of the following are true:
 
 **The job-to-be-done.** "I have a CEO who will eventually want me to be visible. I have a network that respects me. I have stories. I do not have the six hours/week to write."
 
-**Where they buy** — sees a ghostwritten post from a peer; clicks profile; finds the agency; books a call. Or — referred by an existing Underline retainer in their professional circle.
+**Where they buy** — sees a ghostwritten post from a peer; clicks profile; finds the agency; books a call. Or — referred by an existing Bylineship retainer in their professional circle.
 
 **Objections that close the sale** — pricing transparency on the page (no "book a call to learn pricing"); the anti-feature manifesto in the contract; the explicit one-month exit clause.
 
@@ -66,7 +66,7 @@ A retainer is a fit when **all five** of the following are true:
 | Company | a B2B sales-led co. running 4-8 named LinkedIn voices in parallel |
 | Use case | retainer for the CEO + 2 VPs + Head of Growth, all running through one editorial call |
 
-We don't market to Jordan directly. They find us through Maya or Diego — typically when an Operator-tier retainer succeeds and the principal recommends Underline upstream to their CRO.
+We don't market to Jordan directly. They find us through Maya or Diego — typically when an Operator-tier retainer succeeds and the principal recommends Bylineship upstream to their CRO.
 
 ## Anti-personas (hard disqualifiers)
 
