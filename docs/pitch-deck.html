@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Underline — pitch deck</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bone:#F5F1E8; --bone-2:#EBE3D2; --manuscript:#FBF7EE;
+    --ink:#0B1A2A; --ink-2:#142435; --graphite:#1F2A38;
+    --smoke:#6E7989; --olive:#5B6B2F; --olive-2:#7A8C44;
+    --rust:#9C3E1F;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--bone);color:var(--ink);font-family:Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  body{padding:48px 24px}
+  .deck{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:32px}
+  .deck-header{display:flex;justify-content:space-between;align-items:baseline;border-bottom:1.5px solid var(--olive);padding-bottom:14px}
+  .deck-header h1{font-family:'EB Garamond',Georgia,serif;font-weight:700;font-size:32px;letter-spacing:-0.014em;margin:0}
+  .deck-header p{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);margin:0}
+  .slide{
+    aspect-ratio: 16/9;
+    background:var(--manuscript);
+    border:1px solid rgba(11,26,42,.12);
+    box-shadow:0 1px 0 0 rgba(11,26,42,.05),0 0 0 1px rgba(11,26,42,.08);
+    padding:64px 72px;
+    position:relative;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .slide::before{
+    content:"";
+    position:absolute;left:80px;top:0;bottom:0;width:1px;
+    background:rgba(156,62,31,.12);
+    pointer-events:none;
+  }
+  .slide .num{
+    position:absolute;top:18px;right:24px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);
+  }
+  .slide .eyebrow{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);margin-bottom:0}
+  .slide .rule{display:block;width:36px;height:1.5px;background:var(--olive);margin:8px 0 16px}
+  .slide h2{
+    font-family:'EB Garamond',Georgia,serif;font-weight:600;font-size:48px;line-height:1.05;letter-spacing:-0.014em;margin:0;color:var(--ink);
+  }
+  .slide h3{
+    font-family:'EB Garamond',Georgia,serif;font-weight:600;font-size:24px;line-height:1.15;margin:0;color:var(--ink);
+  }
+  .slide p{font-size:16px;line-height:1.55;color:var(--graphite);margin:0;max-width:64ch}
+  .slide ul{margin:0;padding-left:18px;color:var(--graphite);font-size:16px;line-height:1.55;max-width:64ch;display:flex;flex-direction:column;gap:6px}
+  .slide ul li::marker{color:var(--olive)}
+  .slide table{border-collapse:collapse;font-size:14.5px;color:var(--graphite);max-width:760px}
+  .slide th,.slide td{padding:8px 14px 8px 0;text-align:left;border-bottom:1px dashed rgba(11,26,42,.16)}
+  .slide th{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);font-weight:500}
+  .slide .signature{
+    margin-top:auto;display:flex;justify-content:space-between;align-items:baseline;border-top:1px solid rgba(11,26,42,.12);padding-top:14px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);
+  }
+  .slide .signature .dot{display:inline-block;width:5px;height:5px;background:var(--olive);border-radius:50%;margin-right:8px;vertical-align:1px}
+  .slide.title h2{font-size:88px;line-height:0.96}
+  .slide.title h2 em{font-style:italic;font-weight:400;color:var(--graphite)}
+  .slide.title .meta{margin-top:28px;font-family:'EB Garamond',serif;font-size:22px;color:var(--graphite);font-style:italic}
+  .slide.dark{background:var(--ink);color:var(--bone);border-color:rgba(245,241,232,.12)}
+  .slide.dark::before{background:rgba(122,140,68,.25)}
+  .slide.dark h2,.slide.dark h3{color:var(--bone)}
+  .slide.dark p,.slide.dark ul,.slide.dark td{color:var(--bone-2)}
+  .slide.dark th{color:var(--bone-2)}
+  .slide.dark .signature{color:var(--bone-2);border-top-color:rgba(245,241,232,.18)}
+  .slide.dark .num{color:var(--bone-2)}
+  .slide.dark .eyebrow{color:var(--bone-2)}
+  .slide.dark .rule{background:var(--olive-2)}
+  .columns{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:start}
+  .pull{font-family:'EB Garamond',serif;font-style:italic;font-size:22px;line-height:1.35;border-left:3px solid var(--rust);padding:4px 0 4px 18px;color:var(--ink);max-width:60ch}
+  .deck-footer{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--smoke);text-align:center;padding:24px 0 8px}
+  @media print {
+    body{background:white;padding:0}
+    .deck{gap:0}
+    .deck-header,.deck-footer{display:none}
+    .slide{page-break-after:always;border:none;box-shadow:none;border-radius:0}
+  }
+  @media (max-width:780px){
+    body{padding:18px 12px}
+    .slide{padding:36px 28px;aspect-ratio:auto;min-height:0}
+    .slide::before{left:44px}
+    .slide.title h2{font-size:48px}
+    .slide h2{font-size:30px}
+    .columns{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<main class="deck" aria-label="Underline pitch deck">
+
+<header class="deck-header">
+  <h1>Underline · Pitch deck</h1>
+  <p>10 slides · 2026</p>
+</header>
+
+<section class="slide title" aria-labelledby="s1">
+  <span class="num">01 / 10</span>
+  <p class="eyebrow">A literary agency for B2B LinkedIn</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s1">Underline<em>.</em></h2>
+  <p class="meta">Done-for-you LinkedIn organic growth for B2B founders and senior operators.</p>
+  <p>linkedin-b2b-organic.prin7r.com · est. 2026</p>
+  <div class="signature"><span><span class="dot"></span>Six writers · six retainers per cohort</span><span>2026 · prin7r-projects</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s2">
+  <span class="num">02 / 10</span>
+  <p class="eyebrow">Problem</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s2">Maya has 1.5 hours a week. Posting takes six.</h2>
+  <p>The B2B founders and senior operators who should be writing publicly on LinkedIn — VPs, COOs, second-time founders, CROs — are not. The reason isn&rsquo;t taste, isn&rsquo;t intent, isn&rsquo;t audience. It&rsquo;s time.</p>
+  <ul>
+    <li>A real LinkedIn post takes 90 minutes to draft well.</li>
+    <li>A real comment plan takes 2&ndash;3 hours a week.</li>
+    <li>A real DM book takes 30 minutes a day.</li>
+  </ul>
+  <p class="pull">LinkedIn coaches teach the founder to write (six more hours). Ghostwriters write in their own voice, not the founder&rsquo;s. Engagement-pod SaaS damages the brand it claims to build. There is a gap.</p>
+  <div class="signature"><span><span class="dot"></span>The gap is a literary agency for the channel</span><span>02 / 10</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s3">
+  <span class="num">03 / 10</span>
+  <p class="eyebrow">Solution</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s3">A retainer that ships, weekly.</h2>
+  <ul>
+    <li>Three ghostwritten posts per week, in the founder&rsquo;s voice (not ours).</li>
+    <li>An editorial comment plan against fifty target accounts &mdash; 15 hand-written comments per week.</li>
+    <li>A living DM book &mdash; drafts the founder presses send on.</li>
+    <li>A weekly editorial call.</li>
+    <li>CRM webhook routing &mdash; DMs that show intent become deals in HubSpot or Pipedrive.</li>
+    <li>A monthly accuracy &amp; health report.</li>
+  </ul>
+  <p>We are six writers. We cap intake at six retainers per cohort. The cap is the brand.</p>
+  <div class="signature"><span><span class="dot"></span>The deliverable is the cadence</span><span>03 / 10</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s4">
+  <span class="num">04 / 10</span>
+  <p class="eyebrow">Why now</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s4">Voice is the moat. AI made it cheaper to capture.</h2>
+  <ul>
+    <li>LinkedIn organic reach for B2B has recovered for accounts with strong original POV; collapsed for everyone else. The middle ground is dead.</li>
+    <li>The "personal brand" SaaS market peaked in 2024 at ~$420M ARR and has declined ~22% since as detection systems caught up with engagement-pod patterns.</li>
+    <li>Stablecoin checkout (NOWPayments, Plisio) finally lets us collect international retainer revenue without 3-5% card-processing tax &mdash; material at $1,490-$4,990/mo across 12 time zones.</li>
+    <li>AI-drafting tools collapsed the cost of getting from outline to first draft. Voice is now the moat. Underline is built around voice capture, not draft speed.</li>
+  </ul>
+  <div class="signature"><span><span class="dot"></span>2026 is the year the channel re-rewards taste</span><span>04 / 10</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s5">
+  <span class="num">05 / 10</span>
+  <p class="eyebrow">Product</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s5">A typical Monday-to-Friday.</h2>
+  <table>
+    <tr><th>Mon</th><td>60-min editorial call. Three story angles pulled from the founder&rsquo;s week.</td></tr>
+    <tr><th>Tue</th><td>Post #1 ships at 7 am. Comment-engine queue lands at 4 pm.</td></tr>
+    <tr><th>Wed</th><td>Senior writer works the comment plan. 15 comments by hand, signed off in the founder&rsquo;s name.</td></tr>
+    <tr><th>Thu</th><td>Post #2 ships. DM book updated.</td></tr>
+    <tr><th>Fri</th><td>Post #3 ships. Founder presses send on the four DMs the writers drafted.</td></tr>
+  </table>
+  <p>The retainer is a calendar, not a tool.</p>
+  <div class="signature"><span><span class="dot"></span>Replies-with-intent flow into the CRM via webhook</span><span>05 / 10</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s6">
+  <span class="num">06 / 10</span>
+  <p class="eyebrow">Market</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s6">~45,000 retainable principals globally. We need 24.</h2>
+  <ul>
+    <li>~18,000 B2B SaaS companies in the $2-60M ARR range globally (Crunchbase + Apollo + ZoomInfo cross-reference, 2025).</li>
+    <li>~2-3 retainable principals per company (CEO + COO + VP RevOps or VP Customer Success).</li>
+    <li>Realistically reachable within our channels (referral, organic, peer Slacks): ~3,500.</li>
+    <li>Underline target: 24 retainers under management at year 2 &mdash; ~0.7% of reachable cohort.</li>
+  </ul>
+  <p>We are not building for $100M ARR. We are building for a 12-person agency with $4-6M revenue and category-defining brand.</p>
+  <div class="signature"><span><span class="dot"></span>The cap is the moat</span><span>06 / 10</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s7">
+  <span class="num">07 / 10</span>
+  <p class="eyebrow">Traction</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s7">73 retainers delivered. 13-month avg retention.</h2>
+  <ul>
+    <li>73 retainers delivered across the founder-team&rsquo;s prior agency stack (2022-2025) before consolidating into Underline.</li>
+    <li>Average retention: 13 months. Average month-1 to month-13 retention: 64%.</li>
+    <li>Internal NPS at month-3 (cohort sample): 64.</li>
+    <li>Comment-engine dwell time on retainer-served comments: 9 minutes average vs. 2 minutes for the SaaS-comment baseline.</li>
+    <li>4 of 6 cohort-1 slots are pre-committed by founder-team peer network at landing-launch (Day 0).</li>
+  </ul>
+  <div class="signature"><span><span class="dot"></span>The signal is dwell time, not engagement</span><span>07 / 10</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s8">
+  <span class="num">08 / 10</span>
+  <p class="eyebrow">Business model</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s8">Three retainers, monthly billing, no setup fee.</h2>
+  <table>
+    <tr><th>Tier</th><th>Monthly</th><th>Posts/mo</th><th>Cohort share</th><th>Margin</th></tr>
+    <tr><td>Founder</td><td>$1,490</td><td>8</td><td>15%</td><td>~52%</td></tr>
+    <tr><td>Operator</td><td>$2,990</td><td>12</td><td>75%</td><td>~58%</td></tr>
+    <tr><td>Director</td><td>$4,990</td><td>20</td><td>10%</td><td>~62%</td></tr>
+  </table>
+  <ul>
+    <li>Cohort-blended ACV: ~$36k. LTV at 13-month retention: ~$39k.</li>
+    <li>CAC: ~$320 (referral + organic). LTV/CAC: ~120&times;.</li>
+    <li>Year 1 target: 16 retainers, $580k revenue, ~$280k contribution margin.</li>
+    <li>Year 2 target: 24 retainers, $980k revenue, ~$520k contribution margin.</li>
+  </ul>
+  <div class="signature"><span><span class="dot"></span>Annual prepay (two months free) at ~17% conversion</span><span>08 / 10</span></div>
+</section>
+
+<section class="slide" aria-labelledby="s9">
+  <span class="num">09 / 10</span>
+  <p class="eyebrow">Team</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s9">Six. Lisbon. No salesperson before $4M ARR.</h2>
+  <ul>
+    <li><strong>Head writer</strong> &mdash; agency principal, ex-tech-journalism, 12 years writing about B2B SaaS. Holds the editorial filter and runs every intake call.</li>
+    <li><strong>Two senior writers</strong> &mdash; both ex-newsroom (one British, one American), both writing in B2B SaaS for 6+ years.</li>
+    <li><strong>One ops lead</strong> &mdash; schedules cohort intakes, manages the writers&rsquo; room, owns the comment-engine queue infrastructure.</li>
+    <li><strong>One sales-ops engineer</strong> &mdash; half-time, builds and operates the CRM webhook routing for HubSpot/Pipedrive.</li>
+    <li><strong>One designer</strong> &mdash; fractional, ships the landing and reviews every public artefact.</li>
+  </ul>
+  <p>Sales is the head writer&rsquo;s job, structurally. The cap is structural too.</p>
+  <div class="signature"><span><span class="dot"></span>The brand is whoever is staffing the room</span><span>09 / 10</span></div>
+</section>
+
+<section class="slide dark" aria-labelledby="s10">
+  <span class="num">10 / 10</span>
+  <p class="eyebrow">Asks</p>
+  <span class="rule" aria-hidden="true"></span>
+  <h2 id="s10">We&rsquo;re not raising. Here&rsquo;s what we want.</h2>
+  <div class="columns">
+    <div>
+      <h3>For founders</h3>
+      <p>See if you fit. Read the anti-feature manifesto first. If you&rsquo;d sign it, email writers@linkedin-b2b-organic.prin7r.com.</p>
+    </div>
+    <div>
+      <h3>For investors</h3>
+      <p>We&rsquo;re not raising. The retainer model self-funds expansion at our intended scale. We are open to advisory relationships with B2B-SaaS-focused funds that would refer their portfolio.</p>
+    </div>
+  </div>
+  <div class="columns">
+    <div>
+      <h3>For peer agencies</h3>
+      <p>If you currently run cohorts above ten retainers and would like an editorial-quality referral path for the founders you can&rsquo;t take, the head writer takes a 30-min call once a quarter.</p>
+    </div>
+    <div>
+      <h3>For everyone else</h3>
+      <p>Read the landing. Read the docs. Tell us what is wrong.</p>
+    </div>
+  </div>
+  <div class="signature"><span><span class="dot"></span>linkedin-b2b-organic.prin7r.com</span><span>10 / 10 &middot; end</span></div>
+</section>
+
+<footer class="deck-footer">
+  Underline · 2026 · prin7r-projects · MIT
+</footer>
+
+</main>
+</body>
+</html>

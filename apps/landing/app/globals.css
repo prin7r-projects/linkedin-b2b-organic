@@ -1,0 +1,383 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ---------------------------------------------------------------------------
+   [UNDERLINE_GLOBALS] Editorial-ghostwriter baseline for Underline.
+   The palette + type system are documented in /DESIGN.md sections 4-6.
+   Five-color manuscript palette, three families, square edges, one shadow,
+   one steady-state animation (the typing cursor on the live-draft frame).
+   --------------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap");
+
+:root {
+  --bone: #F5F1E8;
+  --bone-2: #EBE3D2;
+  --ink: #0B1A2A;
+  --ink-2: #142435;
+  --graphite: #1F2A38;
+  --smoke: #6E7989;
+  --olive: #5B6B2F;
+  --olive-2: #7A8C44;
+  --rust: #9C3E1F;
+  --manuscript: #FBF7EE;
+}
+
+html {
+  background: var(--bone);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  background: var(--bone);
+  color: var(--ink);
+}
+
+::selection {
+  background: var(--olive);
+  color: var(--manuscript);
+}
+
+/* Focus ring — visible olive outline, 2px offset. */
+:focus-visible {
+  outline: 1.5px solid var(--olive);
+  outline-offset: 2px;
+}
+
+/* Skip-to-content link, hidden until focused. */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  background: var(--ink);
+  color: var(--manuscript);
+  padding: 8px 12px;
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  z-index: 100;
+}
+.skip-link:focus { left: 8px; }
+
+/* --- Local components ---------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--manuscript);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 14px 22px;
+  border-radius: 0;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  transition: background 80ms linear, border-color 80ms linear, color 80ms linear;
+  cursor: pointer;
+}
+.btn:hover { background: var(--olive); border-color: var(--olive); color: var(--manuscript); }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  color: var(--ink);
+  font-family: Inter, sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 14px 22px;
+  border-radius: 0;
+  border: 1px solid var(--ink);
+  text-decoration: none;
+  transition: background 80ms linear, color 80ms linear;
+  cursor: pointer;
+}
+.btn-ghost:hover { background: var(--ink); color: var(--manuscript); }
+
+.marginalia {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--smoke);
+}
+
+.eyebrow-rule {
+  display: block;
+  width: 36px;
+  height: 1.5px;
+  background: var(--olive);
+  margin: 16px 0;
+}
+
+.olive-rule {
+  height: 2px;
+  background: var(--olive);
+}
+
+.section {
+  border-bottom: 1px solid rgba(11, 26, 42, .10);
+}
+
+/* The "manuscript" — a typeset frame around the hero ghostwritten post.
+   Imitates a sheet of paper laid on a desk; the only place we use a soft
+   shadow + a 1px border + an internal ruled line. */
+.manuscript {
+  background: var(--manuscript);
+  border: 1px solid rgba(11, 26, 42, .12);
+  position: relative;
+  box-shadow: var(--tw-shadow-manuscript, 0 1px 0 0 rgba(11,26,42,.05), 0 0 0 1px rgba(11,26,42,.08));
+}
+.manuscript::before {
+  content: "";
+  position: absolute;
+  left: 56px;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(155, 62, 31, .14);
+  pointer-events: none;
+}
+.manuscript .ms-rule {
+  height: 1px;
+  background: rgba(11, 26, 42, .08);
+}
+
+.cursor-bar {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--olive);
+  margin-left: 2px;
+  vertical-align: -2px;
+  animation: cursor 1.1s steps(2, start) infinite;
+}
+@keyframes cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-bar { animation: none; opacity: 1; }
+}
+
+/* Tier card */
+.tier {
+  background: var(--bone);
+  border: 1px solid rgba(11, 26, 42, .14);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.tier.featured {
+  background: var(--manuscript);
+  border-color: var(--olive);
+  position: relative;
+}
+.tier.featured::after {
+  content: "";
+  position: absolute;
+  top: -1px;
+  bottom: -1px;
+  left: -1px;
+  width: 3px;
+  background: var(--olive);
+}
+.tier .tier-name {
+  font-family: "EB Garamond", serif;
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+.tier .tier-price {
+  font-family: "EB Garamond", serif;
+  font-weight: 800;
+  font-size: 38px;
+  line-height: 1.0;
+  letter-spacing: -0.014em;
+}
+.tier .tier-mo {
+  font-family: Inter, sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  color: var(--graphite);
+}
+.tier ul.tier-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+.tier ul.tier-features li {
+  font-size: 14.5px;
+  color: var(--graphite);
+  padding: 9px 0;
+  border-top: 1px dashed rgba(11, 26, 42, .14);
+  display: flex;
+  gap: 10px;
+}
+.tier ul.tier-features li:first-child { border-top: 0; }
+.tier ul.tier-features li::before {
+  content: "—";
+  color: var(--olive);
+  font-family: "EB Garamond", serif;
+  flex-shrink: 0;
+}
+
+/* Pull-quote — used on the anti-feature manifesto. */
+.pull {
+  border-left: 3px solid var(--rust);
+  padding: 4px 0 4px 20px;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  line-height: 1.35;
+  color: var(--ink);
+  max-width: 60ch;
+}
+
+/* FAQ details */
+details.faq {
+  border-top: 1px solid rgba(11, 26, 42, .12);
+  padding: 22px 0;
+}
+details.faq:last-child { border-bottom: 1px solid rgba(11, 26, 42, .12); }
+details.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: "EB Garamond", serif;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+}
+details.faq summary::-webkit-details-marker { display: none; }
+details.faq summary::after {
+  content: "+";
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 22px;
+  color: var(--olive);
+  flex-shrink: 0;
+  transition: transform 120ms linear;
+}
+details.faq[open] summary::after { content: "−"; }
+details.faq p {
+  margin-top: 14px;
+  font-size: 16px;
+  color: var(--graphite);
+  max-width: 64ch;
+  line-height: 1.55;
+}
+
+/* Anti-feature card — used in "What we won't do" section. */
+.crossed {
+  background: var(--bone);
+  border: 1px solid rgba(11, 26, 42, .14);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+}
+.crossed h3 {
+  font-family: "EB Garamond", serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  text-decoration: line-through;
+  text-decoration-color: rgba(156, 62, 31, .55);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 2px;
+}
+.crossed p {
+  font-size: 14.5px;
+  line-height: 1.55;
+  color: var(--graphite);
+}
+
+/* Ledger row — used in service-design "what you get" block. */
+.ledger {
+  display: grid;
+  grid-template-columns: 64px 1fr;
+  gap: 0;
+  border-bottom: 1px dashed rgba(11, 26, 42, .14);
+  padding: 22px 0;
+}
+.ledger .num {
+  font-family: "EB Garamond", serif;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 1;
+  letter-spacing: -0.012em;
+  color: var(--olive);
+}
+.ledger h3 {
+  font-family: "EB Garamond", serif;
+  font-weight: 600;
+  font-size: 22px;
+  line-height: 1.15;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.ledger p {
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--graphite);
+  max-width: 60ch;
+}
+
+/* Quiet table-style stripe used by the byline + dateline line. */
+.byline {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--smoke);
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+.byline .dot {
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  background: var(--olive);
+  border-radius: 50%;
+}
+
+/* Quiet paper grain on the bone surface — imperceptible, feels like paper. */
+.grain {
+  position: relative;
+  isolation: isolate;
+}
+.grain::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='1' stitchTiles='stitch'/></filter><rect width='200' height='200' filter='url(%23n)' opacity='0.035'/></svg>");
+  z-index: -1;
+}

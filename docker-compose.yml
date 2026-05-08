@@ -1,0 +1,18 @@
+services:
+  landing:
+    build:
+      context: .
+      dockerfile: Dockerfile.landing
+    image: linkedin-b2b-organic-landing:latest
+    container_name: linkedin-b2b-organic-landing
+    restart: unless-stopped
+    expose:
+      - "3000"
+    env_file:
+      - .env
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.linkedin-b2b-organic.rule=Host(`linkedin-b2b-organic.prin7r.com`)"
+      - "traefik.http.routers.linkedin-b2b-organic.entrypoints=websecure"
+      - "traefik.http.routers.linkedin-b2b-organic.tls.certresolver=letsencrypt"
+      - "traefik.http.services.linkedin-b2b-organic.loadbalancer.server.port=3000"
