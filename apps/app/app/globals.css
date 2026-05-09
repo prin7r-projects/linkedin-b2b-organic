@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Bylineship dashboard — manuscript-margin feel, per DESIGN.md */
+  body {
+    @apply bg-canvas text-ink font-inter antialiased;
+    font-size: 17px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus ring — apple-style: thin olive outline */
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-olive;
+    outline-style: solid;
+  }
+
+  /* Selection */
+  ::selection {
+    @apply bg-olive/15 text-ink;
+  }
+}
+
+@layer components {
+  /* Manuscript frame — the museum-piece treatment */
+  .manuscript {
+    @apply bg-manuscript border border-silver-mist;
+    box-shadow: 0 1px 0 0 rgba(11, 26, 42, 0.05), 0 0 0 1px rgba(11, 26, 42, 0.08);
+    border-radius: 0;
+  }
+
+  /* Dashboard card */
+  .dash-card {
+    @apply bg-canvas border border-silver-mist rounded-none;
+  }
+
+  /* Editorial mark rule */
+  .editorial-rule {
+    @apply w-full h-px bg-olive;
+  }
+
+  /* Olive underbar — used on section headers */
+  .olive-underbar {
+    @apply border-b-2 border-olive inline-block;
+  }
+
+  /* Mono marginalia */
+  .marginalia {
+    @apply font-mono text-graphite text-xs tracking-mono-caps uppercase;
+  }
+
+  /* Draft body — editorial serif */
+  .draft-body {
+    @apply font-garamond text-lg leading-relaxed;
+  }
+
+  /* Blinking cursor (used only on draft previews) */
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+  .cursor-blink {
+    animation: blink 1.1s steps(2, start) infinite;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cursor-blink {
+      animation: none;
+      opacity: 1;
+    }
+  }
+}

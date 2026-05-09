@@ -1,13 +1,46 @@
-# apps/app — Voice & Brief
+# Bylineship — Writers' Room (Wave 3)
 
-This folder is a placeholder for the Voice & Brief member dashboard — a member-only writers' room where the founder reviews drafts, signs off the comment-engine queue, and inspects the lead-routing log.
+The operator dashboard for Bylineship, the literary agency for B2B LinkedIn.
 
-The dashboard ships in a later wave. The Wave 2 surface is the marketing landing at [`../landing/`](../landing/) plus the NOWPayments hosted-invoice checkout it triggers.
+- **Stack:** Next.js 15 (App Router), Drizzle ORM, Postgres, NextAuth v5
+- **Deploy:** Coolify on server `144.91.94.91`
+- **Landing:** [`apps/landing/`](../landing/) — Wave 2, shipped
+- **Docs:** [`docs/`](../../docs/) — brand, architecture, user stories, tech spec
 
-When the dashboard scaffolds:
+## Development
 
-- Stack: Wasp + open-saas (per playbook), with shadcn/ui as the primitive baseline.
-- Auth: passwordless email magic-link first, Google OAuth second.
-- Surfaces: `/inbox` (drafts to sign off), `/queue` (comment plan), `/log` (DMs that became calls), `/settings` (Voice profile, target accounts, CRM mapping).
-- Storage: Postgres on Coolify (server `144.91.94.91`); object storage on Contabo S3-compatible.
-- Payments: NOWPayments retainer renewal + Plisio backup, both wired to the same order schema as the landing.
+```bash
+# From repo root
+cd apps/app
+cp .env.example .env
+# Edit .env with real DATABASE_URL, AUTH_SECRET, etc.
+pnpm install
+pnpm dev        # starts on port 3001
+```
+
+## Database
+
+```bash
+pnpm db:push    # push schema to dev DB
+pnpm db:generate # generate migrations
+pnpm db:migrate  # apply migrations
+pnpm db:studio   # open Drizzle Studio
+```
+
+## Deployment
+
+```bash
+cd apps/app
+docker build -f Dockerfile -t linkedin-b2b-organic-app:latest .
+docker run -p 3001:3001 --env-file .env linkedin-b2b-organic-app:latest
+```
+
+## Phase status
+
+- [x] Phase 0 — Scaffolding (in progress)
+- [ ] Phase 1 — Cohort + retainer activation
+- [ ] Phase 2 — Drafts queue (Telegram-mirrored)
+- [ ] Phase 3 — Comment plan + DM book + CRM webhook
+- [ ] Phase 4 — Production hardening
+- [ ] Phase 5 — Monthly report + craft hand-off + cancellation
+- [ ] Phase 6 — Voice refresh + Studio tier + cohort analytics
