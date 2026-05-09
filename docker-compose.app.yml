@@ -1,0 +1,96 @@
+# Bylineship Wave 3 — full stack docker-compose for Coolify/VPS deploy.
+# Runs alongside the Wave 2 landing (which lives on storage-contabo).
+#
+# Deploy: scp this file + .env to /opt/bylineship-app/ on 144.91.94.91
+#         cd /opt/bylineship-app && docker compose up -d
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: bylineship-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: bylineship
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-bylineship}
+      POSTGRES_DB: bylineship
+    volumes:
+      - bylineship_pg_data:/var/lib/postgresql/data
+    ports:
+      - "127.0.0.1:54321:5432"  # local-only; not exposed to internet
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U bylineship"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bylineship
+
+  redis:
+    image: redis:7-alpine
+    container_name: bylineship-redis
+    restart: unless-stopped
+    command: redis-server --appendonly yes --maxmemory 128mb --maxmemory-policy allkeys-lru
+    volumes:
+      - bylineship_redis_data:/data
+    ports:
+      - "127.0.0.1:63790:6379"  # local-only
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - bylineship
+
+  app:
+    build:
+      context: .
+      dockerfile: apps/app/Dockerfile
+    image: linkedin-b2b-organic-app:latest
+    container_name: bylineship-app
+    restart: unless-stopped
+    expose:
+      - "3001"
+    environment:
+      NODE_ENV: production
+      PORT: "3001"
+      DATABASE_URL: postgresql://bylineship:${POSTGRES_PASSWORD:-bylineship}@postgres:5432/bylineship
+      REDIS_URL: redis://redis:6379
+      AUTH_SECRET: ${AUTH_SECRET}
+      AUTH_RESEND_KEY: ${AUTH_RESEND_KEY}
+      TELEGRAM_BOT_TOKEN: ${TELEGRAM_BOT_TOKEN}
+      POSTMARK_API_KEY: ${POSTMARK_API_KEY}
+      EMAIL_FROM: ${EMAIL_FROM:-writers@linkedin-b2b-organic.prin7r.com}
+      SIGNOFF_SECRET: ${SIGNOFF_SECRET}
+      LINKEDIN_CLIENT_ID: ${LINKEDIN_CLIENT_ID}
+      LINKEDIN_CLIENT_SECRET: ${LINKEDIN_CLIENT_SECRET}
+      ANTHROPIC_API_KEY: ${ANTHROPIC_API_KEY}
+      S3_ENDPOINT: ${S3_ENDPOINT}
+      S3_BUCKET: ${S3_BUCKET:-bylineship-voice-intakes}
+      S3_ACCESS_KEY: ${S3_ACCESS_KEY}
+      S3_SECRET_KEY: ${S3_SECRET_KEY}
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.bylineship-app.rule=Host(`app.linkedin-b2b-organic.prin7r.com`)"
+      - "traefik.http.routers.bylineship-app.entrypoints=websecure"
+      - "traefik.http.routers.bylineship-app.tls.certresolver=letsencrypt"
+      - "traefik.http.services.bylineship-app.loadbalancer.server.port=3001"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    networks:
+      - bylineship
+      - traefik-public
+
+volumes:
+  bylineship_pg_data:
+  bylineship_redis_data:
+
+networks:
+  bylineship:
+    driver: bridge
+  traefik-public:
+    external: true
+    name: traefik-public
