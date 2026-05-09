@@ -207,7 +207,7 @@ export async function createRetainer(
       .where(eq(cohorts.id, cohort.id));
 
     return { retainer, principal, cohort };
-  }).catch((err: Error) => {
+  }, { isolationLevel: "serializable" }).catch((err: Error) => {
     if (err.message === "COHORT_NOT_FOUND") {
       return { error: "cohort_not_found", status: 404 };
     }
