@@ -21,7 +21,7 @@ import { PLANS, createNowpaymentsInvoice, isPlanId } from "@/lib/nowpayments";
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
-type CheckoutBody = { plan?: string };
+type CheckoutBody = { plan?: string; retainerId?: string };
 
 export async function POST(request: Request) {
   let body: CheckoutBody = {};
@@ -31,7 +31,11 @@ export async function POST(request: Request) {
     body = {};
   }
 
-  const planId = body.plan;
+  // Support both JSON body and query params for retainerId (app-to-landing redirect)
+  const url = new URL(request.url);
+  const retainerId = body.retainerId || url.searchParams.get("retainerId") || undefined;
+
+  const planId = body.plan || url.searchParams.get("tier") || undefined;
   if (!isPlanId(planId)) {
     return NextResponse.json(
       {
@@ -45,7 +49,7 @@ export async function POST(request: Request) {
   const baseUrl = appUrlFromRequest(request);
 
   try {
-    const invoice = await createNowpaymentsInvoice({ plan, baseUrl });
+    const invoice = await createNowpaymentsInvoice({ plan, baseUrl, retainerId });
     return NextResponse.json({
       mode: "live",
       plan: plan.id,

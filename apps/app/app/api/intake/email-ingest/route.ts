@@ -9,14 +9,15 @@
  */
 
 import { NextResponse } from "next/server";
-import { parseIntakeEmail, scoreIcpFit } from "@/lib/email";
+import { parseIntakeEmail } from "@/lib/email";
+import { triageIntakeEmail, checkAntiPersonas } from "@/lib/services/intake-triage";
+import { enqueueIntakeTriage } from "@/workers";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
-  // Phase 0: HMAC verification stub (Postmark/SES not yet configured)
-  // TODO Phase 1: verify inbound webhook HMAC before processing
+  // Phase 2: verify inbound webhook HMAC (Postmark/SES) before processing
 
   let raw: Record<string, unknown>;
   try {
@@ -29,28 +30,41 @@ export async function POST(request: Request) {
   }
 
   const email = parseIntakeEmail(raw);
-  const icpScore = scoreIcpFit(email);
 
-  // Log the intake for audit
-  console.log(
-    JSON.stringify({
-      ts: new Date().toISOString(),
-      level: "info",
-      event: "intake_email_received",
-      from: email.from,
-      subject: email.subject,
+  // Anti-persona filter (docs/11 §5): reject known bad fits immediately
+  const antiPersona = checkAntiPersonas(email);
+  if (antiPersona) {
+    console.log(
+      JSON.stringify({
+        ts: new Date().toISOString(),
+        level: "info",
+        event: "intake_rejected_anti_persona",
+        from: email.from,
+        reason: antiPersona
+      })
+    );
+    return NextResponse.json({
+      ok: true,
       messageId: email.messageId,
-      icpScore: icpScore.score,
-      icpFlags: icpScore.flags
-    })
-  );
+      triageDecision: "archive",
+      antiPersona
+    });
+  }
 
-  // Phase 1: post triage card to Lila's Slack #intake-triage
-  // Phase 2: Anthropic-Sonnet-4.6 fallback for ambiguous ICP scoring
+  // Full triage pipeline (heuristic + optional Anthropic analysis)
+  const result = await triageIntakeEmail(email);
+
+  // Enqueue for async processing (Slack notification, CRM lookup, etc.)
+  if (result.triageDecision !== "archive") {
+    await enqueueIntakeTriage(email);
+  }
 
   return NextResponse.json({
     ok: true,
     messageId: email.messageId,
-    icpScore
+    icpScore: result.icpScore,
+    icpFlags: result.icpFlags,
+    triageDecision: result.triageDecision,
+    anthropicAnalysis: result.anthropicAnalysis
   });
 }

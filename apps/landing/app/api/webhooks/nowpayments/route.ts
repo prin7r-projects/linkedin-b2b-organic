@@ -66,6 +66,33 @@ export async function POST(request: Request) {
     `[BYLINESHIP_NOWPAYMENTS_IPN] verified=true order_id=${orderId} status=${status} paid=${paid}`
   );
 
+  // Wave 3: if the order_id contains a retainer reference, forward to the app's
+  // activation endpoint for retainer activation (docs/13 Phase 1 task 4).
+  const retainerId = extractRetainerId(orderId);
+  if (paid && retainerId) {
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3001";
+    try {
+      const activationResponse = await fetch(
+        `${appUrl}/api/retainers/${retainerId}/activate`,
+        {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          body: JSON.stringify({
+            paymentId: stringValue(payload.payment_id) || orderId,
+            paymentStatus: status
+          })
+        }
+      );
+      console.log(
+        `[BYLINESHIP_NOWPAYMENTS_IPN] activation_forward retainerId=${retainerId} status=${activationResponse.status}`
+      );
+    } catch (err) {
+      console.error(
+        `[BYLINESHIP_NOWPAYMENTS_IPN] activation_forward_error retainerId=${retainerId} error=${(err as Error).message}`
+      );
+    }
+  }
+
   return NextResponse.json({
     ok: true,
     verified: true,
@@ -78,4 +105,13 @@ export async function POST(request: Request) {
 function stringValue(value: unknown): string | undefined {
   if (typeof value === "string" || typeof value === "number") return String(value);
   return undefined;
+}
+
+/**
+ * Extract the retainer UUID from a NOWPayments order_id.
+ * Format: bylineship_{tier}_retainer_{uuid}
+ */
+function extractRetainerId(orderId: string): string | null {
+  const match = orderId.match(/retainer_([a-f0-9-]{36})$/);
+  return match ? match[1] : null;
 }

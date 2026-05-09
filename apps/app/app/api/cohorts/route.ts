@@ -249,9 +249,27 @@ export async function createRetainer(
       principalId: principal.id,
       tier: retainer.tier,
       status: retainer.status,
+      monthlyUsd: retainer.monthlyUsd,
       cohortFilled: cohort.filledCount,
-      cohortCap: cohort.capMax
+      cohortCap: cohort.capMax,
+      paymentLink: generatePaymentLink(retainer.id, retainer.tier)
     },
     { status: 201 }
   );
+}
+
+/**
+ * Generate a NOWPayments hosted invoice link for a retainer.
+ * Uses the same pattern as apps/landing/lib/nowpayments.ts.
+ *
+ * Phase 1: returns a landing checkout URL that encodes the retainer ID
+ *   so the IPN can match orderId → retainerId for activation.
+ */
+function generatePaymentLink(retainerId: string, tier: string): string | null {
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL || "https://app.linkedin-b2b-organic.prin7r.com";
+  const landingUrl = process.env.NEXT_PUBLIC_LANDING_URL || "https://linkedin-b2b-organic.prin7r.com";
+
+  // Delegate to the landing's checkout endpoint with the retainer ID
+  // The landing's IPN handler will match orderId → retainerId for activation
+  return `${landingUrl}/api/checkout/nowpayments?retainerId=${retainerId}&tier=${tier}`;
 }
